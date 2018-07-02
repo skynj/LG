@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时监测</title>
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/realTimeMonitoring.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="js/realTimeCharts.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.scroller').perfectScrollbar();
+        })
+    </script>
+</head>
+<body>
+<div class="contain" ng-app="realTimeMonApp">
+    <div class="top">
+        <top-directive></top-directive>
+    </div>
+
+    <div class="main">
+        <div class="main-wrap">
+            <div class="main-top wrap">
+                <div class="wrap-header">
+                    <label class="wrap-title mr-25">实施物联网在线监测企业<span class="title-num">65</span>家</label>
+                    <label class="wrap-title">统计概览</label>
+                </div>
+                <ul class="list">
+                    <li class="mr-10">
+                        <div class="item">
+                            <label class="label item-name">碳排放量</label>
+                            <label class="label item-unit">(万吨CO2e)</label>
+                            <label class="label item-num color-blue">838.59</label>
+                            <label class="label item-statistics">占全市规模工业 34.8%</label>
+                            <i class="icon icon-1"></i>
+                        </div>
+                    </li>
+                    <li class="mr-10">
+                        <div class="item">
+                            <label class="label item-name">生产总值</label>
+                            <label class="label item-unit">(亿元)</label>
+                            <label class="label item-num color-orange">838.59</label>
+                            <label class="label item-statistics">占全市规模工业 34.8%</label>
+                            <i class="icon icon-1"></i>
+                        </div>
+                    </li>
+                    <li class="mr-10">
+                        <div class="item">
+                            <label class="label item-name">生产总值</label>
+                            <label class="label item-unit">(亿元)</label>
+                            <label class="label item-num color-cyan">838.59</label>
+                            <label class="label item-statistics">占全市规模工业 34.8%</label>
+                            <i class="icon icon-1"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="label item-name">利税总额<label class="item-unit">(亿元)</label></label>
+                            <div class="tax-charts" id="tax-charts"></div>
+                            <i class="icon icon-2"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-bottom">
+                <div class="wrap b-left-wrap">
+                    <div class="wrap-header">
+                        <label class="wrap-title mr-25">主要能源消耗趋势</label>
+                        <ul class="time-tab">
+                            <li class="select">月份</li>
+                            <li>季度</li>
+                            <li>年份</li>
+                        </ul>
+                    </div>
+                    <div class="list-wrap">
+                        <ul class="list">
+                            <li>
+                                <div class="consume-info-wrap">
+                                    <div class="left-info">
+                                        <label class="consume consume-name">煤炭<span
+                                                class="consume-unit">(吨)</span></label>
+                                        <label class="consume consume-num color-3d88f2">27776.90</label>
+                                        <label class="consume consume-monitor">（监测点位110个）</label>
+                                    </div>
+                                    <div class="right-charts" id="line_2"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="consume-info-wrap">
+                                    <div class="left-info">
+                                        <label class="consume consume-name">电力<span
+                                                class="consume-unit">(万千瓦时)</span></label>
+                                        <label class="consume consume-num color-ff9c0e">27776.90</label>
+                                        <label class="consume consume-monitor">（监测点位110个）</label>
+                                    </div>
+                                    <div class="right-charts" id="line_3"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="consume-info-wrap">
+                                    <div class="left-info">
+                                        <label class="consume consume-name">蒸汽<span
+                                                class="consume-unit">(万立方米)</span></label>
+                                        <label class="consume consume-num color-28c27a">27776.90</label>
+                                        <label class="consume consume-monitor">（监测点位110个）</label>
+                                    </div>
+                                    <div class="right-charts" id="line_4"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="consume-info-wrap">
+                                    <div class="left-info">
+                                        <label class="consume consume-name">天然气<span class="consume-unit">(万立方米)</span></label>
+                                        <label class="consume consume-num color-32c1ed">27776.90</label>
+                                        <label class="consume consume-monitor">（监测点位110个）</label>
+                                    </div>
+                                    <div class="right-charts" id="line_5"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="wrap b-right-wrap">
+                    <div class="wrap-header">
+                        <label class="wrap-title mr-25">企业能耗监测详情</label>
+                        <label class="wrap-time">当前时间：<span class="wrap-time">2017年11月20日16时</span></label>
+                    </div>
+                    <div class="details-form">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="h_1" align="center">序号</th>
+                                <th width="20%" align="center">企业名称</th>
+                                <th class="h_2" align="center">累计耗煤(吨)</th>
+                                <th class="h_2" align="center">累计耗电(万千瓦时)</th>
+                                <th class="h_2" align="center">累计耗蒸汽(万立方米)</th>
+                                <th class="h_2" align="center">累计耗天然气(万立方米)</th>
+                                <th class="h_2" align="center">进入企业碳资产管理系统</th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="scroller">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="d_1 color-ffffff size-14" align="center">1</td>
+                                    <td class="color-ffffff size-14" width="20%" align="center">台玻昆山玻璃有限公司</td>
+                                    <td class="d_2 color-3d88f2 size-16" align="center">6782.54</td>
+                                    <td class="d_2 color-ff9c0e size-16" align="center">568.45</td>
+                                    <td class="d_2 color-28c27a size-16" align="center">343.4</td>
+                                    <td class="d_2 color-32c1ed size-16" align="center">12.4</td>
+                                    <td class="d_2 icon-quit" align="center"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module('realTimeMonApp', []);
+</script>
+<script type="text/javascript" src="js/top-directive.js"></script>
+</body>
+</html>

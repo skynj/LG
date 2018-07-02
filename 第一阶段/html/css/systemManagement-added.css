@@ -1,0 +1,250 @@
+/**
+* @time 2018/04/20 10:20:27
+* @author lg
+* @desc 体系管理列表页面样式
+*/
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top {
+    width: 100%;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.main {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+.main .added-btn-wrap {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #b0b9bf;
+    background: -webkit-linear-gradient(#ffffff, #e2e6eb); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#ffffff, #e2e6eb); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#ffffff, #e2e6eb); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#ffffff, #e2e6eb); /* 颜色的渐变标准的语法 */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*      新增按钮所在      */
+.added-btn-wrap .added-btn {
+    display: inline-block;
+    width: 67px;
+    height: 27px;
+    line-height: 27px;
+    background: #1e71e5;
+    border: 1px solid #0b265b;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.added-btn-wrap .added-btn:hover {
+    background: #0863e1;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+/*      内容列表        */
+.main .content {
+    width: 100%;
+    position: absolute;
+    top: 42px;
+    bottom: 0;
+}
+
+.content .system-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+.content .system-list .list-item {
+    flex: 1;
+    width: 310px;
+    height: 240px;
+    border: 1px solid #929db0;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.content .system-list .list-title {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #fbfcfd;
+    border-bottom: 1px solid #929db0;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    z-index: 20;
+}
+
+.content .system-list .list-title .icon-close-green {
+    width: 28px;
+    height: 28px;
+    background: url("../images/icon-close-green.png") no-repeat center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+.content .system-list .list-title:hover .icon-close-green {
+    display: block;
+}
+
+.content .system-list .list-content-wrap {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .system-list .list-content-wrap .list-content > div {
+
+}
+
+.list-content .content-title {
+    height: 25px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 10px 0;
+}
+
+.list-content .content-title label {
+    font-size: 18px;
+    color: #5d6c85;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.list-content .content-title div {
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    background: #ff9c0e;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 13px;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    box-shadow: 2px 1px 1px #c57c12 inset;
+    display: none;
+}
+
+.list-content .content-title label:hover + div {
+    display: block;
+}
+
+.list-content .time-choose {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ced1d6;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+
+}
+
+.list-content .time-choose label {
+    color: #5d6c85;
+    font-size: 30px;
+    margin-right: -50px;
+    cursor: pointer;
+}
+
+.list-content .time-choose span {
+    color: #438bfb;
+    font-size: 30px;
+    margin-left: -50px;
+    cursor: pointer;
+}
+
+.list-content .system-manage-btn {
+    height: 35px;
+    line-height: 35px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.list-content .system-manage-btn label {
+    display: inline-block;
+    width: 125px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccd1d9;
+    background: linear-gradient(#ffffff, #e9edf3);
+    border-radius: 2px;
+    text-align: center;
+    color: #5d6c85;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/*      滚动条     */
+.content .right-scroll {
+    width: 11px;
+    border: 1px solid #e3e5e6;
+    box-shadow: 1px 1px 1px #ccc;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    bottom: 0;
+}
+
+.content .right-scroll .scroll {
+    width: 5px;
+    height: 60%;
+    border: 1px solid #9b9b9b;
+    box-shadow: 1px 1px 1px #d8dadb;
+    background: #babdc0;
+    margin: 2px auto;
+    border-radius: 2.5px;
+}

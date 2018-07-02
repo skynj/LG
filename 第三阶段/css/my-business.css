@@ -1,0 +1,83 @@
+@charset "utf-8";
+/**
+* @time 2018/06/08 09:13:05
+* @author lg
+* @desc 我的企业页面css
+*/
+.app_main {
+    background: #f3f4f5;
+}
+
+.top-nav {
+    width: 100%;
+    height: 40%;
+    background: url("../images/myBusiness/my-business-top.png") no-repeat;
+    background-size: 100% 100%;
+}
+.content {
+    padding: 0 20px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.link-wrap{
+    background: #f5f6f7;
+    top:0;
+    width:auto;
+    height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px 2px #bfc1c375;
+}
+.btn-link{
+    display: block;
+    height:70px;
+    line-height: 70px;
+    width: calc(100% - 50px);
+    background: #ffffff url("../images/myBusiness/my-business-icon-right.png") no-repeat;
+    background-size: 15px 20px;
+    background-position: center;
+    background-position-x: 87%;
+    padding-left:50px;
+    position: relative;
+    color:#000000;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.icon{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translate(60%,-50%);
+}
+.icon-limit{
+    background: url("../images/myBusiness/my-business-icon-limit.png") no-repeat center / contain;
+}
+.icon-project{
+     background: url("../images/myBusiness/my-business-icon-pro.png") no-repeat center / contain;
+ }
+
+.btn-cancel {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background: #ffffff;
+    text-align: center;
+    color:#aea2ec;
+    font-size: 1.6rem;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 1px #aea2ec;
+    margin-top: 100px;
+    cursor: pointer;
+}

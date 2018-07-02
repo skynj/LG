@@ -1,0 +1,56 @@
+@charset "utf-8";
+/**
+* @time 2018/06/01 09:24:52
+* @author lg
+* @desc 谈足迹页面css
+*/
+
+.app_main {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    background: url("../images/carbonFootprint/footprint-bg.png") no-repeat center / 100% 101%;
+}
+.center-wrap{
+    width: 17rem;
+    height:22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-80%);
+}
+.footprint-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+
+}
+
+.btn-wrap {
+    width: 15.5rem;
+    height: 15.5rem;
+    border-radius: 7.75rem;
+    border: 1px dashed #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-btn {
+    display: inline-flex;
+    width: 13rem;
+    height: 13rem;
+    background: #ffffff;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    color:#6b97fe;
+    font-size: 4.3rem;
+    cursor: pointer;
+}

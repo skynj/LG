@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报告核查</title>
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/reportInspect.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="js/reportInspect.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.scroller').perfectScrollbar();
+        })
+    </script>
+</head>
+<body>
+<!--    容器      -->
+<div class="contain" ng-app="reportInspectApp">
+    <!--        头部      -->
+    <div class="top">
+        <top-directive></top-directive>
+    </div>
+
+    <!--        主体      -->
+    <div class="main">
+        <div class="main-wrap">
+            <div class="main-top wrap">
+                <div class="wrap-header">
+                    <!--<label class="wrap-title mr-25">实施物联网在线监测企业<span class="title-num">65</span>家</label>-->
+                    <label class="wrap-title">统计概览</label>
+                </div>
+                <div class="statistic-enterprise-wrap">
+                    <ul class="enterprise-list">
+                        <li class="enterprise-item-active"><label class="statistic-info">温室气体排放报告企业<span
+                                class="enterprise-num">600</span>家</label></li>
+                        <li><label class="statistic-info">温室气体排放报告企业<span class="enterprise-num">600</span>家</label>
+                        </li>
+                        <li><label class="statistic-info">温室气体排放报告企业<span class="enterprise-num">600</span>家</label>
+                        </li>
+                    </ul>
+                    <div class="tab-list">
+                        <ul class="list greenhouse">
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">碳排放量</label>
+                                    <label class="label item-unit">(万吨CO2e)</label>
+                                    <label class="label item-num color-blue">333.44</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">生产总值</label>
+                                    <label class="label item-unit">(亿元)</label>
+                                    <label class="label item-num color-orange">333.44</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <label class="label item-name">报告碳排放总量<label class="item-unit">(亿元)</label></label>
+                                    <div class="tax-charts" id="tax-charts"></div>
+                                    <i class="icon icon-2"></i>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list deal">
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">碳排放量</label>
+                                    <label class="label item-unit">(万吨CO2e)</label>
+                                    <label class="label item-num color-blue">222.33</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">生产总值</label>
+                                    <label class="label item-unit">(亿元)</label>
+                                    <label class="label item-num color-orange">222.33</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <label class="label item-name">能源消耗<label class="item-unit">(亿元)</label></label>
+                                    <div class="tax-charts" id="tax-charts"></div>
+                                    <i class="icon icon-2"></i>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list inspect">
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">碳排放量</label>
+                                    <label class="label item-unit">(万吨CO2e)</label>
+                                    <label class="label item-num color-blue">111.22</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10">
+                                <div class="item">
+                                    <label class="label item-name">生产总值</label>
+                                    <label class="label item-unit">(亿元)</label>
+                                    <label class="label item-num color-orange">111.22</label>
+                                    <label class="label item-statistics">占全市规模工业 34.8%</label>
+                                    <i class="icon icon-1"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <label class="label item-name">生产总值<label class="item-unit">(亿元)</label></label>
+                                    <div class="tax-charts" id="tax-charts"></div>
+                                    <i class="icon icon-2"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-bottom wrap">
+                <div class="wrap-header">
+                    <ul class="progress-btn-list">
+                        <li class="icon-click-before icon-click">直报计划</li>
+                        <li class="icon-click-before">报告管理</li>
+                        <li class="icon-click-before">核查管理</li>
+                        <li class="icon-click-before">复查管理</li>
+                        <li class="icon-click-before">审核确认</li>
+                    </ul>
+                </div>
+                <div class="detail-info-wrap">
+                    <!--        直报计划        -->
+                    <ul class="detail-info-content straight-info-list">
+                        <li>
+                            <div class="straight-info-item">
+                                <div class="item-title-wrap">
+                                    <label class="item-title rI-progress-icon-threshold">直报门槛</label>
+                                </div>
+                                <div class="item-info">
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">直报基准年：</label>
+                                        <label class="info-label text-left"><span class="data-num">2013</span>年</label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">能源消耗报告门槛：</label>
+                                        <label class="info-label text-left"><span
+                                                class="data-num">5000</span>吨标煤</label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">碳排放报告门槛：</label>
+                                        <label class="info-label text-left"><span
+                                                class="data-num">10000</span>吨CO2e</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="straight-info-item">
+                                <div class="item-title-wrap">
+                                    <label class="item-title rI-progress-icon-plan">直报计划</label>
+                                </div>
+                                <div class="item-info">
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">报送开始日期：</label>
+                                        <label class="info-label text-left"><span
+                                                class="data-num">2017-01-30</span></label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">报送截止日期：</label>
+                                        <label class="info-label text-left"><span
+                                                class="data-num">2017-01-30</span></label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">审核截止日期：</label>
+                                        <label class="info-label text-left"><span
+                                                class="data-num">2017-01-30</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="straight-info-item">
+                                <div class="item-title-wrap">
+                                    <label class="item-title rI-progress-icon-list">直报名单</label>
+                                </div>
+                                <div class="item-info">
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">报送企业总数：</label>
+                                        <label class="info-label text-left"><span class="data-num">600</span>家</label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">报送企业较上年：</label>
+                                        <label class="info-label text-left"><span class="data-num">+10</span>家</label>
+                                    </div>
+                                    <div class="straight-info">
+                                        <label class="info-label text-right mr-25">停报企业较上年：</label>
+                                        <label class="info-label text-left"><span class="data-num">-10</span>家</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--        报告管理        -->
+                    <div class="detail-info-content report-progress-wrap">
+                        <div class="top-wrap">
+                            <label class="title-name">报告进度</label>
+                            <a class="btn btn-size-14 btn-338bfd btn-detail-see report-detail-check">详情查看</a>
+                        </div>
+                        <div class="charts-wrap cl">
+                            <div class="left-charts-wrap fl">
+                                <div class="left-charts-title">距离报送结束还有<span class="left-charts-num">48</span>天</div>
+                                <ul class="charts-pie-list">
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-1"></div>
+                                        <p class="enterprise-type">按时报送企业</p>
+                                    </li>
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-2"></div>
+                                        <p class="enterprise-type">逾期报送企业</p>
+                                    </li>
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-3"></div>
+                                        <p class="enterprise-type">尚未报送企业</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right-charts-wrap fr">
+                                <div class="tab-btn-wrap">
+                                    <a class="btn btn-size-14 btn-switchover btn-click">按地区</a>
+                                    <a class="btn btn-size-14 btn-switchover ">按行业</a>
+                                </div>
+                                <div class="charts-bar-wrap" id="bar-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--        核查管理        -->
+                    <div class="detail-info-content inspect-management-wrap">
+                        <div class="top-wrap">
+                            <label class="title-name">核查进度</label>
+                            <a class="btn btn-size-14 btn-338bfd btn-detail-see inspect-detail-check">详情查看</a>
+                        </div>
+                        <div class="charts-wrap cl">
+                            <div class="left-charts-wrap fl">
+                                <div class="left-charts-title">距离报送结束还有<span class="left-charts-num">48</span>天</div>
+                                <ul class="charts-pie-list">
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-4"></div>
+                                        <p class="enterprise-type">已完成核查企业</p>
+                                    </li>
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-5"></div>
+                                        <p class="enterprise-type">逾期核查企业</p>
+                                    </li>
+                                    <li>
+                                        <div class="pie-chart-wrap" id="pie-6"></div>
+                                        <p class="enterprise-type">尚未核查企业</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right-charts-wrap fr">
+                                <div class="left-charts-title">核查委托机构<span class="left-charts-num">8</span>家</div>
+                                <!-- <div class="tab-btn-wrap">
+                                     <a class="btn btn-size-14 btn-switchover btn-click">按地区</a>
+                                     <a class="btn btn-size-14 btn-switchover ">按行业</a>
+                                 </div>-->
+                                <div class="charts-bar-wrap" id="bar-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--   报告管理弹出层     -->
+    <div class="popups-wrap report-popups" style="display: none">
+        <div class="info-wrap">
+            <div class="top-title-wrap">
+                <label class="top-title">详情查看</label>
+                <i class="btn-close report-btn"></i>
+            </div>
+            <div class="table-info-wrap">
+                <div class="condition-select-wrap">
+                    <div class="condition-select">
+                        <div class="search-enterprise-name">
+                            <label>企业名称:</label>
+                            <input type="text" class="search-enterprise" name="enterprise-name" value=""/>
+                        </div>
+                        <div class="area-select-wrap">
+                            <label>所在地区:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>吴江区</option>
+                                <option>长江区</option>
+                            </select>
+                        </div>
+                        <div class="accounting-industry-select-wrap">
+                            <label>所核算行业:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>化工</option>
+                                <option>发电</option>
+                            </select>
+                        </div>
+                        <div class="submit-status-select-wrap">
+                            <label>报送状态:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>未报送</option>
+                                <option>已报送</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-size-14 btn-338bfd btn-search">搜索</a>
+                    </div>
+                    <a class="btn btn-rushTo">催报</a>
+                </div>
+                <div class="table-wrap">
+                    <table class="table-header" align="center" style="border-collapse:collapse;" cellspacing="0">
+                        <tr class="table-header-top">
+                            <td class="b-l-none"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="b-r-none"></td>
+                        </tr>
+                        <tr class="table-header-info">
+                            <td width="6%">序号</td>
+                            <td width="10%">企业名称</td>
+                            <td width="12%">组织结构代码</td>
+                            <td width="10%">所在地区</td>
+                            <td width="10%">核算行业</td>
+                            <td width="10%">报送状态</td>
+                            <td width="10%">监测计划</td>
+                            <td width="10%">报送日期</td>
+                            <td width="12%">报送截止日期</td>
+                            <td width="10%">催报次数</td>
+                        </tr>
+                        <tr style="background: #102c66">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div class="scroller">
+                        <table class="table-content" cellspacing="0">
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-bottom-wrap page">
+                    <p class="page-left">
+                        每页<select class="page-num-select">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                    </select>条信息，共<span>28</span>页
+                    </p>
+                    <div class="page-right">
+                        <span class="page-num"><</span>
+                        <span class="page-num">1</span>
+                        <span class="page-num">2</span>
+                        <span class="page-num">3</span>
+                        <span class="page-num">4</span>
+                        ...
+                        <span class="page-num">28</span>
+                        <span class="page-num">></span>
+                        跳转到
+                        <input type="text" class="page-num goTo-page" value=" "/>
+                        页
+                        <a class="btn btn-12 btn-338bfd jump_to">跳转</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    核查管理弹出层     -->
+    <div class="popups-wrap inspect-popups">
+        <div class="info-wrap">
+            <div class="top-title-wrap">
+                <label class="top-title">详情查看</label>
+                <i class="btn-close inspect-btn"></i>
+            </div>
+            <div class="table-info-wrap">
+                <div class="condition-select-wrap">
+                    <div class="condition-select">
+                        <div class="search-enterprise-name">
+                            <label>企业名称:</label>
+                            <input type="text" class="search-enterprise" name="enterprise-name" value=""/>
+                        </div>
+                        <div class="area-select-wrap">
+                            <label>所在地区:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>吴江区</option>
+                                <option>长江区</option>
+                            </select>
+                        </div>
+                        <div class="accounting-industry-select-wrap">
+                            <label>所核算行业:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>化工</option>
+                                <option>发电</option>
+                            </select>
+                        </div>
+                        <div class="submit-status-select-wrap">
+                            <label>报送状态:</label>
+                            <select class="select-box">
+                                <option></option>
+                                <option>未报送</option>
+                                <option>已报送</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-size-14 btn-338bfd btn-search">搜索</a>
+                    </div>
+                    <a class="btn btn-rushTo">催查</a>
+                </div>
+                <div class="table-wrap">
+                    <table class="table-header" align="center" style="border-collapse:collapse;" cellspacing="0">
+                        <tr class="table-header-top">
+                            <td class="b-l-none"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="b-r-none"></td>
+                        </tr>
+                        <tr class="table-header-info">
+                            <td width="6%">序号</td>
+                            <td width="10%">企业名称</td>
+                            <td width="12%">所在地区</td>
+                            <td width="10%">核算行业</td>
+                            <td width="10%">核算机构</td>
+                            <td width="10%">核查状态</td>
+                            <td width="10%">复查机构</td>
+                            <td width="10%">复查状态</td>
+                            <td width="12%">按时完成率</td>
+                            <td width="10%">提出申诉率</td>
+                        </tr>
+                        <tr style="background: #102c66">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div class="scroller">
+                        <table class="table-content" cellspacing="0">
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                            <tr align="center">
+                                <td width="6%">1</td>
+                                <td width="10%">吴江发电公司</td>
+                                <td width="12%">test000005</td>
+                                <td width="10%">吴江区</td>
+                                <td width="10%">发电</td>
+                                <td width="10%">未报送</td>
+                                <td width="10%">暂未备案</td>
+                                <td width="10%">2017-01-20</td>
+                                <td width="12%">2017-04-20</td>
+                                <td width="10%">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-bottom-wrap page">
+                    <p class="page-left">
+                        每页<select class="page-num-select">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                    </select>条信息，共<span>28</span>页
+                    </p>
+                    <div class="page-right">
+                        <span class="page-num"><</span>
+                        <span class="page-num">1</span>
+                        <span class="page-num">2</span>
+                        <span class="page-num">3</span>
+                        <span class="page-num">4</span>
+                        ...
+                        <span class="page-num">28</span>
+                        <span class="page-num">></span>
+                        跳转到
+                        <input type="text" class="page-num goTo-page" value=" "/>
+                        页
+                        <a class="btn btn-12 btn-338bfd jump_to">跳转</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module('reportInspectApp', []);
+</script>
+<script>
+    $(document).ready(function () {
+        /* $('.top-nav .nav-list').find('a').eq(1).css({
+             'color':'#3d88f2',
+             'border-bottom':'2px solid #3d88f2'
+         });*/
+
+        $('.enterprise-list').children().click(function () {
+            $(this).addClass('enterprise-item-active').siblings().removeClass('enterprise-item-active');
+            var _index = $(this).index();
+            var _this = $('.statistic-enterprise-wrap').find('.tab-list .list').eq(_index);
+            _this.css('z-index', '50');
+            _this.siblings('.tab-list .list').css('z-index', '1');
+        });
+
+
+        $('.progress-btn-list').children().click(function () {
+            var _this = $(this);
+            var _wraps = $('.detail-info-wrap');
+            _this.removeClass('icon-click-after').addClass('icon-click').siblings().removeClass();
+            _this.nextAll().addClass('icon-click-before');
+            _this.prevAll().addClass('icon-click-after');
+            var _index = _this.index();
+//            console.log(_index);
+            _wraps.children().css('z-index', '1');
+            _wraps.children().eq(_index).css('z-index', '10');
+        });
+
+        $('.tab-btn-wrap').children().click(function () {
+            var _this = $(this);
+            _this.addClass('btn-click').siblings().removeClass('btn-click');
+        });
+
+        /*      弹出层点击切换     */
+        $('.report-detail-check').click(function () {
+            $('.report-popups').toggle();
+        });
+        $('.report-btn').click(function () {
+            $('.report-popups').toggle();
+        });
+
+        $('.inspect-detail-check').click(function () {
+            $('.inspect-popups').toggle();
+        });
+        $('.inspect-btn').click(function () {
+            $('.inspect-popups').toggle();
+        });
+
+
+
+
+        $('.page-right .page-num').click(function () {
+//            console.log("1");
+            var _this = $(this);
+            _this.siblings().removeClass('select-page color-ffffff');
+            _this.addClass('select-page color-ffffff');
+        });
+
+    })
+</script>
+<script type="text/javascript" src="js/top-directive.js"></script>
+</body>
+</html>

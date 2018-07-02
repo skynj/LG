@@ -1,0 +1,584 @@
+/**
+* @time 2018/04/13 11:30:55
+* @author lg
+* @desc 市级考核-任务下发
+*/
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top {
+    width: 100%;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.main {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+/*      内容侧边栏       */
+.main .sidebar {
+    width: 115px;
+    background: #414956;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.main .sidebar ul {
+    width: 115px;
+}
+
+.main .sidebar ul li {
+    width: 115px;
+    height: auto;
+}
+
+.main .sidebar ul li a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 67px;
+    border-top: 1px solid #565d69;
+    border-right: 1px solid #414956;
+    border-bottom: 1px solid #1b2736;
+    border-left: 1px solid #414956;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 23px;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.main .sidebar ul li a:hover {
+    border: 1px solid #5b9fff;
+    background: -webkit-linear-gradient(#398bff, #0b5fd4); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#398bff, #0b5fd4); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#398bff, #0b5fd4); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#398bff, #0b5fd4); /* 标准的语法 */
+}
+
+/*      内容右侧        */
+.main .content {
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 115px;
+}
+
+.main .content .content-top {
+    min-width: 919px;
+    height: 40px;
+    line-height: 40px;
+    background: #ebeef1;
+    border-top: 1px solid #b0b9bf;
+    border-bottom: 1px solid #b0b9bf;
+}
+
+.main .content .content-top label {
+    color: #313131;
+    font-size: 14px;
+}
+
+.task {
+    width: 600px;
+    height: 42px;
+    padding-left: 15px;
+}
+
+.time {
+    width: 170px;
+    height: 42px;
+}
+
+.main .content .content-top .task-select {
+    width: 482px;
+    height: 28px;
+    line-height: 28px;
+    color: #566273;
+    font-size: 14px;
+    padding-left: 4px;
+}
+
+.main .content .content-top .time-select {
+    width: 100px;
+    height: 27px;
+    line-height: 27px;
+    color: #566273;
+    font-size: 14px;
+    padding-left: 4px;
+}
+
+.main .content .content-top .task-state {
+    float: right;
+    display: inline-block;
+    color: #5d6c85;
+    margin-right: 15px;
+}
+
+/*      流程步骤        */
+.content-center {
+    width: calc(100% - 160px);
+    height: calc(100% - 42px);
+    min-width: 1280px;
+    min-height: 460px;
+    padding: 0 80px;
+    /*background: #d6dae2;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-center .five-process {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*定义项目在主轴(水平方向)*/
+    align-items: center; /*定义项目在交叉轴(垂直方向)上居中对齐*/
+
+}
+
+.content-center .five-process > div {
+    position: relative;
+    width: 380px;
+    height: 50px;
+    min-width: 280px;
+    flex-grow: 0;
+    z-index: 10;
+}
+
+/*      通用样式       */
+.mlr20px {
+    margin: 0 20px;
+}
+
+.content-center .float-box-top {
+    display: inline-block;
+    width: 314px;
+    height: 156px;
+    border-right: 1px solid #989ea9;
+    border-left: 1px solid #989ea9;
+    text-align: center;
+    border-top: 1px solid #989ea9;
+    border-bottom: 7px solid #989ea9;
+    position: absolute;
+    top: -200px;
+}
+
+.content-center .float-box-bottom {
+    display: inline-block;
+    width: 314px;
+    height: 156px;
+    border-right: 1px solid #989ea9;
+    border-left: 1px solid #989ea9;
+    text-align: center;
+    border-top: 7px solid #989ea9;
+    border-bottom: 1px solid #989ea9;
+    position: absolute;
+    bottom: -200px;
+}
+
+.content-center .float-box h3 {
+    margin: 38px auto 26px;
+    color: #5d6c85;
+    font-size: 18px;
+}
+
+.content-center .float-box label {
+    margin: 0 auto;
+    font-size: 14px;
+    display: inline-block;
+    color: #5d6c85;
+}
+
+.content-center .float-box label a {
+    color: #5d6c85;
+    text-decoration: underline;
+}
+
+.content-center .five-process i {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: 1px solid #e9ebee;
+    color: #e9ebee;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.content-center .five-process .process-name {
+    display: inline-block;
+    line-height: 50px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/*      考核体系配置      */
+.content-center .five-process .system-configuration .s-c-btn {
+    height: 50px;
+    background: #acb4bf;
+    position: relative;
+    min-width: 195px;
+    /*padding-left:32px;*/
+    /*width: 280px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.content-center .five-process .system-configuration .s-c-btn:hover {
+    background: #3486fa;
+}
+
+.content-center .five-process .system-configuration .s-c-btn:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid #fff;
+    border-left: 30px solid transparent;
+    border-bottom: 25px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-center .process-1::before {
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: -37px;
+    position: absolute;
+    border-top: 15px solid #989ea9;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: translate(-13px, 0);
+
+}
+
+.content-center .five-process .system-configuration .s-c-btn:hover + .process-1 {
+    border-bottom-color: #3486fa;
+}
+
+.content-center .five-process .system-configuration .s-c-btn:hover + .process-1 > label > a {
+    color: #3486fa;
+}
+
+.content-center .five-process .system-configuration .s-c-btn:hover + .process-1:before {
+    border-top-color: #3486fa;
+}
+
+/*      考核体系配置      结束*/
+/*      考核目标制定      */
+.content-center .five-process .goal-setting .g-s-btn {
+    height: 50px;
+    background: #acb4bf;
+    position: relative;
+    min-width: 195px;
+    /*padding-left:32px;*/
+    /*width: 280px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+.content-center .five-process .goal-setting .g-s-btn:hover {
+    background: #3486fa;
+}
+
+.content-center .five-process .goal-setting .g-s-btn:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.content-center .five-process .goal-setting .g-s-btn:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid #fff;
+    border-left: 30px solid transparent;
+    border-bottom: 25px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-center .process-2::before {
+    content: "";
+    width: 0;
+    height: 0;
+    top: -37px;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #989ea9;
+    border-right: 15px solid transparent;
+    transform: translate(-13px, 0);
+
+}
+
+.content-center .five-process .goal-setting .g-s-btn:hover + .process-2 {
+    border-top-color: #3486fa;
+}
+
+.content-center .five-process .goal-setting .g-s-btn:hover + .process-2 > label > a {
+    color: #3486fa;
+}
+
+.content-center .five-process .goal-setting .g-s-btn:hover + .process-2:before {
+    border-bottom-color: #3486fa;
+}
+
+/*      考核目标制定      结束*/
+/*      报送截止时间设置      */
+.content-center .five-process .closing-date .c-d-btn {
+    height: 50px;
+    background: #acb4bf;
+    position: relative;
+    min-width: 195px;
+    /*width: 280px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.content-center .five-process .closing-date .c-d-btn:hover {
+    background: #3486fa;
+}
+
+.content-center .five-process .closing-date .c-d-btn:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.content-center .five-process .closing-date .c-d-btn:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid #fff;
+    border-left: 30px solid transparent;
+    border-bottom: 25px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-center .process-3::before {
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: -37px;
+    position: absolute;
+    border-top: 15px solid #989ea9;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: translate(-13px, 0);
+
+}
+
+.content-center .process-3 .task {
+    display: inline-block;
+    width: 28px;
+    height: 30px;
+    background: url("../images/task.png") no-repeat center;
+}
+
+.content-center .five-process .closing-date .c-d-btn:hover + .process-3 {
+    border-bottom-color: #3486fa;
+}
+
+.content-center .five-process .closing-date .c-d-btn:hover + .process-3 .task {
+    /*background-color: #3486fa;*/
+}
+
+.content-center .five-process .closing-date .c-d-btn:hover + .process-3:before {
+    border-top-color: #3486fa;
+}
+
+/*      报送截止时间设置     结束*/
+/*      考核任务下发          */
+.content-center .five-process .target-hair .t-h-btn {
+    height: 50px;
+    background: #acb4bf;
+    position: relative;
+    min-width: 195px;
+    /*width: 280px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.content-center .five-process .target-hair .t-h-btn:hover {
+    background: #3486fa;
+}
+
+.content-center .five-process .target-hair .t-h-btn:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.content-center .five-process .target-hair .t-h-btn:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid #fff;
+    border-left: 30px solid transparent;
+    border-bottom: 25px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-center .process-4::before {
+    content: "";
+    width: 0;
+    height: 0;
+    top: -37px;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #989ea9;
+    border-right: 15px solid transparent;
+    transform: translate(-13px, 0);
+}
+
+.content-center .five-process .target-hair .t-h-btn:hover + .process-4 {
+    border-top-color: #3486fa;
+}
+
+.content-center .five-process .target-hair .t-h-btn:hover + .process-4 > label > a {
+    color: #3486fa;
+}
+
+.content-center .five-process .target-hair .t-h-btn:hover + .process-4:before {
+    border-bottom-color: #3486fa;
+}
+
+/*      考核任务下发       结束*/
+/*      报送进度跟踪          */
+.content-center .five-process .progress-tracking .p-t-btn {
+    height: 50px;
+    background: #acb4bf;
+    position: relative;
+    min-width: 195px;
+    /*width: 280px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.content-center .five-process .progress-tracking .p-t-btn:hover {
+    background: #3486fa;
+}
+
+.content-center .five-process .progress-tracking .p-t-btn:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.content-center .process-5 {
+    right: 0;
+}
+
+.content-center .process-5 .progress {
+    display: inline-block;
+    width: 127px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #f5f7fa;
+    font-size: 14px;
+    color: #5d6c85;
+    text-align: center;
+    border: 1px solid #ccd1d9;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.content-center .process-5::before {
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: -37px;
+    position: absolute;
+    border-top: 15px solid #989ea9;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: translate(-13px, 0);
+
+}
+
+.content-center .five-process .progress-tracking .p-t-btn:hover + .process-5 {
+    border-bottom-color: #3486fa;
+}
+
+.content-center .five-process .progress-tracking .p-t-btn:hover + .process-5 > label > a {
+    color: #3486fa;
+}
+
+.content-center .five-process .progress-tracking .p-t-btn:hover + .process-5:before {
+    border-top-color: #3486fa;
+}
+
+/*      报送进度跟踪      结束*/
+
+
+

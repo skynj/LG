@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>趋势预测</title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/trendPrediction.css">
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+<!--    容器      -->
+<div class="contain" ng-app="myApp">
+    <!--        头部      -->
+    <div class="top">
+        <div class="top-content clearfix">
+            <div class="header-system-name">
+            </div>
+            <div class="header-">
+
+            </div>
+            <div class="header-nav clearfix">
+                <ul class="nav-left fl clearfix">
+                    <li><a href="#" class="nav-bar nav-bar-left">综合分析</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-left">综合报告</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-left">趋势预测</a></li>
+                </ul>
+                <ul class="nav-right fr clearfix">
+                    <!--  <li><a href="#" class="nav-bar nav-bar-right"><i class="setup"></i>设置</a></li>-->
+                    <li><a href="#" class="nav-bar nav-bar-right border-right-bg"><i class="news"><label
+                            class="news-num">9</label></i>消息</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-right border-right-bg"><i class="user"></i>个人中心</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-right"><i class="cancel"></i>退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--        主体      -->
+    <div class="main">
+        <div class="main-top" ng-controller="trendPrediction-top-controller">
+            <ul class="top-list">
+                <li class="list standard-circumstances" ng-repeat="circumstance in circumstances">
+                    <div class="item-header">
+                        <label class="item-name">{{circumstance.name}}</label>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="item-content">
+
+                            <div class="label label-name">{{circumstance.carbonTime}}</div>
+                            <div class="label label-num" ng-class="fontColor($index+1)">{{circumstance.num}}</div>
+                            <div class="label label-unit">{{circumstance.unit}}</div>
+                        </div>
+                    </div>
+                </li>
+                <!--<li class="list low-carbon-circumstances">
+                    <div class="item-header">
+                        <label class="item-name">基准情景</label>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="item-content">
+                            <div class="label label-name">2025碳排放量</div>
+                            <div class="label label-num font-color-2">113.79</div>
+                            <div class="label label-unit">万吨CO2e</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list dark-circumstances">
+                    <div class="item-header">
+                        <label class="item-name">基准情景</label>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="item-content">
+                            <div class="label label-name">2025碳排放量</div>
+                            <div class="label label-num font-color-3">113.79</div>
+                            <div class="label label-unit">万吨CO2e</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list intensify-circumstances">
+                    <div class="item-header">
+                        <label class="item-name">基准情景</label>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="item-content">
+                            <div class="label label-name">2025碳排放量</div>
+                            <div class="label label-num font-color-4">113.79</div>
+                            <div class="label label-unit">万吨CO2e</div>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+        <div class="main-chart">
+            <div class="item-header">
+                <label class="item-name">不同情景下碳排放总量变化趋势对比</label>
+            </div>
+            <div class="item-wrap chart" id="line"></div>
+            <div class="legend-list">
+                <ul>
+                    <li class="legend">
+                        <i class="legend-color legend-icon-2"></i>
+                        <label class="legend-name">能耗量(万吨标煤)</label>
+                    </li>
+                    <li class="legend">
+                        <i class="legend-color legend-icon-3"></i>
+                        <label class="legend-name">碳排放量(万吨CO2e)</label>
+                    </li>
+                    <li class="legend">
+                        <i class="legend-color legend-icon-4"></i>
+                        <label class="legend-name">能耗量(万吨标煤)</label>
+                    </li>
+                    <li class="legend">
+                        <i class="legend-color legend-icon-5"></i>
+                        <label class="legend-name">碳排放量(万吨CO2e)</label>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-uxd.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script src="js/trendPrediction.js"></script>
+    <script src="js/lineCharts.js"></script>
+</div>
+</body>
+</html>

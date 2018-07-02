@@ -1,0 +1,142 @@
+@charset "utf-8";
+/**
+* @time 2018/06/01 16:40:55
+* @author lg
+* @desc 碳足迹结果
+*/
+
+.app_main {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/carbonFootprint/carbon-footprint-result-lg.png") no-repeat center / 100% 101%;
+}
+
+.center-wrap {
+    width: 100%;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 10%);
+}
+
+@media screen and (min-width: 320px) and (max-width: 359px) {
+    .center-wrap {
+        height: 28rem;
+    }
+    .btn-wrap{
+        top:14%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 374px) {
+    .center-wrap {
+        height: 28rem;
+    }
+    .btn-wrap{
+        top:20%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 385px){
+    .center-wrap {
+        height: 28rem;
+    }
+    .btn-wrap{
+        top:24%;
+    }
+}
+
+@media screen and (min-width: 386px) and (max-width: 414px){
+    .center-wrap {
+        height: 28rem;
+    }
+    .btn-wrap{
+        top:31%;
+    }
+}
+@media screen and (min-width: 415px){
+    .center-wrap {
+        height: 28rem;
+    }
+    .btn-wrap{
+        top:24%;
+    }
+}
+
+.footprint-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.title-nick-name {
+    color: #ffffff;
+    font-size: 2.4rem;
+}
+
+.btn-wrap {
+    width: 15.5rem;
+    height: 15.5rem;
+    /*border-radius: 7.75rem;*/
+    box-sizing: border-box;
+    background: url("../images/carbonFootprint/result-circle.png") no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+}
+
+.btn-result {
+    display: inline-flex;
+    width: 13rem;
+    height: 13rem;
+    background: #ffffff;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    box-shadow: 0 0 9px -1px #b1a8a8;
+}
+.result-wrap{
+    width:10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.result-num{
+    color: #000000;
+    font-size: 3.6rem;
+}
+.result-unit{
+    color:#000000;
+    font-size: 1.8rem;
+}
+
+.btn-recount{
+    display: block;
+    width:122px;
+    height:40px;
+    line-height: 40px;
+    color:#6b97fe;
+    font-size:1.8rem;
+    border:1px solid #6b97fe;
+    text-align: center;
+}
+.footer-txt{
+    position: absolute;
+    bottom:5rem;
+    color:#888888;
+    font-size: 1.5rem;
+    padding:0 2rem;
+    text-align: center;
+}

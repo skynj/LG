@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>项目详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/carbon-project-detail.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.main').perfectScrollbar();
+        })
+    </script>
+</head>
+<body ng-app="projectDetailApp" ng-controller="projectDetailContr">
+<div class="contain">
+    <div class="app_top">
+        <a href="javascript: history.go(-1);" class="back"><i class="backIco"></i></a>
+        <div class="title">项目详情</div>
+        <!--<div class="rigBtn"></div>-->
+    </div>
+
+
+    <div class="app_main">
+        <div class="main">
+            <div class="content top">
+                <label class="content_title">项目基本信息</label>
+                <div class="content-wrap">
+                    <ul class="list">
+                        <li>
+                            <label class="project">项目名称</label>
+                            <label class="project-info">{{project.proName}}</label>
+                        </li>
+                        <li>
+                            <label class="project">项目性质</label>
+                            <label class="project-info">{{project.type}}</label>
+                        </li>
+                        <li>
+                            <label class="project">总投资（亿元）</label>
+                            <label class="project-info">{{project.amount}}</label>
+                        </li>
+                        <li>
+                            <label class="project">计划开始时间</label>
+                            <label class="project-info">{{project.startTime}}</label>
+                        </li>
+                        <li class="border-bottom-none">
+                            <label class="project">计划竣工时间</label>
+                            <label class="project-info">{{project.endTime}}</label>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content center">
+                <label class="content_title">所属企业信息</label>
+                <div class="content-wrap">
+                    <ul class="list">
+                        <li>
+                            <label class="project">项目名称</label>
+                            <label class="project-info">{{project.etpName}}</label>
+                        </li>
+                        <li>
+                            <label class="project">所属行业</label>
+                            <label class="project-info">{{project.industy}}</label>
+                        </li>
+                        <li>
+                            <label class="project">所在城市</label>
+                            <label class="project-info">{{project.city}}</label>
+                        </li>
+                        <li>
+                            <label class="project">所在区县</label>
+                            <label class="project-info">{{project.county}}</label>
+                        </li>
+                        <li>
+                            <label class="project">企业规模</label>
+                            <label class="project-info">{{project.scale}}</label>
+                        </li>
+                        <li  class="border-bottom-none">
+                            <label class="project">企业总产值（亿元）</label>
+                            <label class="project-info">{{project.outputValue}}</label>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content bottom">
+                <label class="content_title">项目能源消费情况</label>
+                <div class="content-wrap">
+                    <ul class="list">
+                        <li>
+                            <label class="project">综合能源消费量（吨标准煤）</label>
+                            <label class="project-info">{{project.consumption}}</label>
+                        </li>
+                        <li>
+                            <label class="project">项目碳排放总量合记（吨CO2e）</label>
+                            <label class="project-info">{{project.dischargeAll}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="app_foot">
+        <ul>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-message.html" class="footerTxt">碳资讯</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-trading.html" class="footerTxt">碳交易</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-knowledge.html" class="footerTxt">碳知识</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-footprint.html" class="footerTxt">碳足迹</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="mine.html" class="footerTxt">我的</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var app = angular.module('projectDetailApp',[]);
+    app.config(['$locationProvider', function ($locationProvider) {
+        // $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }]);
+    app.controller('projectDetailContr',['$scope','$http','$location',function ($scope,$http,$location) {
+        var projectId = '';
+        if($location.search().id){
+            projectId = $location.search().id;
+        }
+        $http.post('http://192.168.0.38:6001/carbonPro',$.param({pid:1}),{
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).then(function successCallback(response) {
+            $scope.project = response.data[0];
+            console.dir(response.data[0]);
+        },function errorCallback(response) {
+            alert("没收到传值！！！");
+        })
+
+    }])
+</script>
+</body>
+</html>

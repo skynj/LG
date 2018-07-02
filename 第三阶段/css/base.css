@@ -1,0 +1,165 @@
+@charset "utf-8";
+i,em{
+    font-style: normal;
+}
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.contain{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    max-width: 750px;
+    margin: auto;
+}
+.app_top{
+    height: 50px;
+    line-height: 50px;
+    background: linear-gradient(to right , #6d99ff, #3c6cde);
+    position: relative;
+}
+.back{
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.6rem;
+    color: #fff;
+    position: absolute;
+    left: 15px;
+}
+.backIco{
+    display: inline-block;
+    width: 25px;
+    height: 50px;
+    background: url("../images/back.png") no-repeat left center;
+    background-size: 65% 50%;
+    vertical-align: top;
+}
+.title{
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+}
+.rigBtn{
+    width: 38px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    background: url("../images/search.png") no-repeat center;
+    background-size: 60% 40%;
+}
+.app_main{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+    background: #f3f4f5;
+    overflow: hidden;
+}
+.app_foot{
+    height: 69px;
+    border-top: 1px solid #e5e5e5;
+    background: #f7f7fa;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px #ececed;
+}
+.app_foot ul{
+    height: 100%;
+}
+.app_foot li{
+    float: left;
+    display: flex;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.rightLine{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: url("../images/line1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.footerMet{
+    margin: auto;
+}
+.footerIco{
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin: auto;
+}
+.app_foot li:first-child .footerIco{
+    background: url("../images/welcome/icon_1.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(2) .footerIco{
+    background: url("../images/welcome/icon_2.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(3) .footerIco{
+    background: url("../images/welcome/icon_3.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(4) .footerIco{
+    background: url("../images/welcome/icon_4.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(5) .footerIco{
+    background: url("../images/welcome/icon_5.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:first-child.active .footerIco,.app_foot li:first-child:hover .footerIco{
+    background: url("../images/welcome/icon_1_h.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(2).active .footerIco,.app_foot li:nth-child(2):hover .footerIco{
+    background: url("../images/welcome/icon_2_h.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(3).active .footerIco,.app_foot li:nth-child(3):hover .footerIco{
+    background: url("../images/welcome/icon_3_h.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(4).active .footerIco,.app_foot li:nth-child(4):hover .footerIco{
+    background: url("../images/welcome/icon_4_h.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.app_foot li:nth-child(5).active .footerIco,.app_foot li:nth-child(5):hover .footerIco{
+    background: url("../images/welcome/icon_5_h.png") no-repeat center;
+    background-size: 70% 70%;
+}
+.footerTxt{
+    color: #999999;
+    font-size: 1.4rem;
+}
+.app_foot li.active .footerTxt,.app_foot li:hover .footerTxt{
+    color: #4993f7;
+}
+@media screen and (max-width: 320px){
+    .app_main{
+        bottom: 60px;
+    }
+    .app_foot{
+        height: 60px;
+    }
+}

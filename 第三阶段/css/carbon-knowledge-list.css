@@ -1,0 +1,118 @@
+@charset "utf-8";
+/**
+* @time 2018/05/28 14:02:44
+* @author lg
+* @desc 碳资讯页面css
+*/
+
+.app_main{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    background: #f3f4f5;
+    overflow: hidden;
+}
+
+.main_top{
+    width:100%;
+    height:13.5rem;
+}
+.main_top img{
+    width:100%;
+    height:100%;
+}
+.main_content{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: #efeff4;
+}
+.list{
+    background: #ffffff;
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.list li {
+    width:calc(100% - 1.5rem);
+    padding-left:1.5rem;
+}
+@media screen and (min-width: 320px) and (max-width: 359px){
+    .list li {
+        height:7.9rem;
+    }
+}
+@media screen and (min-width: 360px) and (max-width: 374px){
+    .list li {
+        height:9.6rem;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 385px){
+    .list li {
+        height:7.8rem;
+    }
+}
+@media screen and (min-width: 386px) and (max-width: 414px) {
+    .list li {
+        height:7.8rem;
+    }
+}
+
+.item{
+    height:100%;
+    padding-right:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background: yellowgreen;*/
+    border-bottom:1px solid #e5e5e5;
+}
+.item_image{
+    width:6.25rem;
+    height:6rem;
+    margin-right:20px;
+}
+.item_content{
+    height:6.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.message_title{
+    font-size: 1.7rem;
+    color:#000000;
+}
+.content_bottom{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.message_time{
+    color:#a9a9a9;
+    font-size: 1.4rem;
+}
+.linkTo{
+    display: inline-block;
+    width: 25px;
+    height:16px;
+    background:url("../images/carbornMessage/icon-right.png") no-repeat center / 50% 100%;
+    vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+
+

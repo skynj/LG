@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>碳足迹结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/carbon-footprint-result.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+</head>
+<body>
+<div class="contain" ng-app="footPrintResultApp" ng-controller="footPrintResultContr">
+    <div class="app_top">
+        <div class="back"><i class="backIco"></i>返回</div>
+        <div class="title">碳足迹</div>
+        <div class="rigBtn"></div>
+    </div>
+
+
+    <div class="app_main">
+        <div class="center-wrap">
+            <label class="footprint-title"><a class="title-nick-name">小房子</a>一天产生的碳足迹</label>
+            <div class="btn-wrap">
+                <a href="javascript:;" class="btn-result">
+                    <div class="result-wrap">
+                        <label class="result-num">{{result}}</label>
+                        <label class="result-unit">kg CO2</label>
+                    </div>
+
+                </a>
+            </div>
+            <a ng-click="reCalculate()" class="btn-recount">重新计算</a>
+
+        </div>
+        <p class="footer-txt">一棵树生长40年，平均每年可吸收465公斤二氧化
+            碳，平均每天吸收1.27公斤的二氧化碳。</p>
+    </div>
+
+
+    <!--<div class="app_foot">
+        <ul>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="javascript:;" class="footerTxt">首页</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="javascript:;" class="footerTxt">碳配额</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="javascript:;" class="footerTxt">碳考核</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="javascript:;" class="footerTxt">碳项目</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="javascript:;" class="footerTxt">个人中心</a>
+                </div>
+            </li>
+        </ul>
+    </div>-->
+</div>
+<script>
+    var app = angular.module('footPrintResultApp',[]);
+    app.config(['$locationProvider', function ($locationProvider) {
+        // $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }]);
+    app.controller('footPrintResultContr',['$scope','$http','$location','$window',function ($scope,$http,$location,$window) {
+        var result = '';
+        if ($location.search().result) {
+           $scope.result = $location.search().result;
+//            console.log(result);
+        }
+        $scope.reCalculate = function () {
+            $window.location.href = 'carbon-footprint-calculate.html';
+        }
+
+    }]);
+</script>
+</body>
+</html>

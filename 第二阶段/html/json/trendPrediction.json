@@ -1,0 +1,28 @@
+{
+  "circumstances":[
+    {
+      "name":"基准情景",
+      "carbonTime":"2025碳排放量",
+      "num":"113.79",
+      "unit":"万吨CO2e"
+    },
+    {
+      "name":"低碳情景",
+      "carbonTime":"2025碳排放量",
+      "num":"108.56",
+      "unit":"万吨CO2e"
+    },
+    {
+      "name":"深蓝情景",
+      "carbonTime":"2025碳排放量",
+      "num":"96.55",
+      "unit":"万吨CO2e"
+    },
+    {
+      "name":"基准情景",
+      "carbonTime":"2025碳排放量",
+      "num":"92.33",
+      "unit":"万吨CO2e"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重点项目</title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/majorProject.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.popover-close').click(function () {
+                $('.projectInfo').fadeOut(1000);
+            });
+            $('.item-overview').click(function () {
+                $('.project-supervision').hide();
+                $('.project-overview').toggle();
+            });
+            $('.item-supervision').click(function () {
+                $('.project-overview').hide();
+                $('.project-supervision').toggle();
+            })
+        });
+
+    </script>
+</head>
+<body>
+<!--    容器      -->
+<div class="contain" ng-app="myApp">
+    <!--        头部      -->
+    <div class="top">
+        <div class="top-content clearfix">
+            <div class="header-system-name">
+            </div>
+            <div class="header-">
+
+            </div>
+            <div class="header-nav clearfix">
+                <ul class="nav-left fl clearfix">
+                    <li><a href="#" class="nav-bar nav-bar-left">城市</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-left">行业</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-left">企业</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-left">重点项目</a></li>
+                </ul>
+                <ul class="nav-right fr clearfix">
+                    <!--  <li><a href="#" class="nav-bar nav-bar-right"><i class="setup"></i>设置</a></li>-->
+                    <li><a href="#" class="nav-bar nav-bar-right border-right-bg"><i class="news"><label
+                            class="news-num">9</label></i>消息</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-right border-right-bg"><i class="user"></i>个人中心</a></li>
+                    <li><a href="#" class="nav-bar nav-bar-right"><i class="cancel"></i>退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--        主体      -->
+    <div class="main">
+        <!--        侧边栏导航       -->
+        <ul class="slide-tab">
+            <li class="slide-tab-item item-overview">
+                <div class="item item-bg-1">
+                    <label class="item-name">项目概览</label>
+                </div>
+            </li>
+            <li class="slide-tab-item item-supervision">
+                <div class="item item-bg-2">
+                    <label class="item-name">项目监管</label>
+                </div>
+            </li>
+            <li class="slide-tab-item">
+                <div class="item item-bg-3">
+                    <label class="item-name">能效分析</label>
+                </div>
+            </li>
+            <li class="slide-tab-item">
+                <div class="item item-bg-4">
+                    <label class="item-name">项目库维护</label>
+                </div>
+            </li>
+        </ul>
+
+        <!--        项目概览        -->
+        <div class="project-overview" ng-controller="majorProject-overview-controller">
+            <div class="left-charts">
+                <div class="zoom-icon"></div>
+
+                <div class="popover list projectInfo">
+                    <div class="list-header cl">
+                        <label class="list-title ">项目信息</label>
+                        <label class="popover-close fr"></label>
+                    </div>
+                    <div class="list-content info-content">
+                        <div class="project-info">
+                            <div class="single-line">
+                                <label class="info-label">项目名称：</label><span class="info-span project-name">{{projectInfo.projectName}}</span>
+                            </div>
+                            <div class="single-line">
+                                <label class="info-label">建设单位：</label><span class="info-span constructer-name">{{projectInfo.constructerName}}</span>
+                            </div>
+                            <div class="single-line cl">
+                                <div class="width195 fl">
+                                    <label class="info-label">总投资：</label><span
+                                        class="info-span investor">{{projectInfo.investor}}</span>
+                                </div>
+                                <div class="width180 padding-left90 fr">
+                                    <label class="info-label">建设进度：</label><span
+                                        class="info-span project-progress">{{projectInfo.projectProgress}}</span>
+                                </div>
+                            </div>
+                            <div class="single-line cl">
+                                <div class="width195 fl">
+                                    <label class="info-label">项目类型：</label><span class="info-span project-type"><label
+                                        class="num">{{projectInfo.projectType.num}}</label>{{projectInfo.projectType.unit}}</span>
+                                </div>
+                                <div class="width180 padding-left90 fr">
+                                    <label class="info-label">节能投资：</label><span class="info-span  energy-saving"><label
+                                        class="num">{{projectInfo.energySaving.num}}</label>{{projectInfo.energySaving.unit}}</span>
+                                </div>
+                            </div>
+                            <div class="single-line cl">
+                                <div class="width195 fl">
+                                    <label class="info-label">开始时间：</label><span
+                                        class="info-span">{{projectInfo.startTime}}</span>
+                                </div>
+                                <div class="width180 padding-left90 fr">
+                                    <label class="info-label">竣工时间：</label><span
+                                        class="info-span">{{projectInfo.completedTime}}</span>
+                                </div>
+                            </div>
+                            <div class="single-line border-bottom-dashed cl">
+                                <div class="width195 fl">
+                                    <label class="info-label">预计减排量：</label><span
+                                        class="info-span">{{projectInfo.emission}}</span>
+                                </div>
+                                <div class="width260 energy-saving-money fr">
+                                    <label class="info-label energy-saving-money-label">是否申请节能减排资金：</label><span
+                                        class="info-span">{{projectInfo.orNot == true ? "是":"否"}}</span>
+                                </div>
+                            </div>
+                            <div class="single-line project-name">
+                                <div class="width195 fl">
+                                    <label class="info-label">责任人：</label><span
+                                        class="info-span">{{projectInfo.chargePerson}}</span>
+                                </div>
+                                <div class="width180 padding-left90 fr">
+                                    <label class="info-label">电话：</label><span class="info-span">{{projectInfo.telephone}}</span>
+                                </div>
+                            </div>
+                            <div class="single-line project-name">
+                                <label class="info-label">邮箱：</label><span
+                                    class="info-span">{{projectInfo.email}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="right-wrap">
+                <!--        总量指标      -->
+                <div class="list totalIndicator">
+                    <div class="list-header">
+                        <label class="list-title">总量指标</label>
+                    </div>
+                    <div class="list-content">
+                        <ul class="list-items">
+                            <li class="list-item" ng-repeat="totalIndicator in  totalIndicators">
+                                <div class="item-content">
+                                    <div class="label label-name color-96c7ff">{{totalIndicator.name}}</div>
+                                    <div class="label label-num font-color-1">{{totalIndicator.num}}</div>
+                                    <div class="label label-unit">{{totalIndicator.unit}}</div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--        右侧底部        -->
+                <div class="right-wrap-footer">
+                    <!--        项目进度        -->
+                    <div class="list projectProgress ">
+                        <div class="list-header">
+                            <label class="list-title">项目进度</label>
+                        </div>
+                        <div class="list-content">
+                            <div class="chart-wrap chart-projectProgress" id="pie">
+                                <!--<div class="energy-info">-->
+                                    <!--<label class="energy-name">已建项目</label>-->
+                                    <!--<div class="consumption">45<i class="symbol">%</i></div>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="legend-list">
+                                <ul>
+                                    <li class="legend">
+                                        <i class="legend-color color-1"></i>
+                                        <label class="legend-name">已建项目</label>
+                                    </li>
+                                    <li class="legend">
+                                        <i class="legend-color color-2"></i>
+                                        <label class="legend-name">在建项目</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--        项目类型        -->
+                    <div class="list projectType ">
+                        <div class="list-header">
+                            <label class="list-title">项目类型</label>
+                        </div>
+                        <div class="list-content chart-projectType" id="bar2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        项目监管        -->
+        <div class="project-supervision" ng-controller="majorProject-supervision-controller">
+            <div class="list supervision">
+                <div class="list-header">
+                    <label class="list-title">镇江市省级交通运输节能减排项目</label>
+                </div>
+                <div class="list-content supervision-content">
+                    <div class="content-top">
+                        <ul class="list-items">
+                            <li class="list-item" ng-repeat="reductionProjectInfo in reductionProjectInfo">
+                                <div class="item-content padding-left40" ng-style="{'background': 'url(../html/images/majorProject/'+ reductionProjectInfo.icon +') no-repeat 30px'}">
+                                    <div class="label label-name color-ffffff">{{reductionProjectInfo.name}}</div>
+                                    <div class="label label-num font-color-1">{{reductionProjectInfo.num}}<label
+                                            class="label label-unit">{{reductionProjectInfo.unit}}</label></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-bottom">
+                        <ul class="list-items">
+                            <li class="list-item">
+                                <div class="item-content">
+                                    <div class="content-title">
+                                        <label class="label label-name color-ffffff bg-transportation">省交通运输节能减排规划建设项目</label>
+                                        <div class="border-line-1"></div>
+                                    </div>
+                                    <div class="content-list">
+                                        <ul class="single-item">
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    项目数量
+                                                    <div class="label label-num font-color-1 fr">12<label
+                                                            class="label label-unit">个</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    申请节能减排资金
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    投资金额
+                                                    <div class="label label-num font-color-1 fr">3.2<label
+                                                            class="label label-unit">亿元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    节能减排投资
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content">
+                                    <div class="content-title">
+                                        <label class="label label-name color-ffffff bg-transportation-organization">新型运输组织项目</label>
+                                        <div class="border-line-1"></div>
+                                    </div>
+                                    <div class="content-list">
+                                        <ul class="single-item">
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    项目数量
+                                                    <div class="label label-num font-color-1 fr">12<label
+                                                            class="label label-unit">个</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    申请节能减排资金
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    投资金额
+                                                    <div class="label label-num font-color-1 fr">3.2<label
+                                                            class="label label-unit">亿元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    节能减排投资
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content">
+                                    <div class="content-title">
+                                        <label class="label label-name color-ffffff bg-application">新能源、清洁能源装备应用</label>
+                                        <div class="border-line-1"></div>
+                                    </div>
+                                    <div class="content-list">
+                                        <ul class="single-item">
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    项目数量
+                                                    <div class="label label-num font-color-1 fr">12<label
+                                                            class="label label-unit">个</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    申请节能减排资金
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    投资金额
+                                                    <div class="label label-num font-color-1 fr">3.2<label
+                                                            class="label label-unit">亿元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                            <li class="single-item-line">
+                                                <div class="detail-data color-96c7ff font-size-16 cl">
+                                                    节能减排投资
+                                                    <div class="label label-num font-color-1 fr">6000<label
+                                                            class="label label-unit">万元</label></div>
+                                                </div>
+                                                <div class="border-line-1"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+<script type="text/javascript" src="js/jquery-uxd.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script>
+<script src="js/pieWithbar2.js"></script>
+<script src="js/majorProject.js"></script>
+</body>
+</html>

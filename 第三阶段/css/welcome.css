@@ -1,0 +1,111 @@
+@charset "utf-8";
+/**
+* @time 2018/05/28 10:10:50
+* @author lg
+* @desc 欢迎页面css
+*/
+.contain{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    max-width: 750px;
+    margin: auto;
+    background: #ffffff;
+}
+/*      main区域      */
+.app_main{
+    position: absolute;
+    top:60px;
+    left:0;
+    right:0;
+    bottom:70px;
+    /*background: yellowgreen;*/
+    display: -webkit-flex; /*webkit*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.center{
+    width: 100%;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+.logo-wrap{
+    height:14.5rem;
+    box-sizing: border-box;
+}
+.logo{
+    height: 7rem;
+    background: url("../images/welcome/welcome-logo.png") no-repeat center  / 22% 100%;
+}
+.logo-title{
+    height:4rem;
+    line-height: 4rem;
+    color:#333333;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+}
+.progress-wrap{
+    height:8rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.progress-dot{
+    width:6rem;
+    height:1.7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.progress-dot .dot{
+    display: inline-block;
+    width:10px;
+    height:10px;
+    background-color:#999999;
+    border-radius: 5px;
+}
+.dot-pro{
+    background-color: #00000038!important;
+}
+.progress-num{
+    width:100%;
+    color:#999999;
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+
+
+
+/*      底部区域        */
+.app_foot{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    line-height: 70px;
+    background: #fcfcfc;
+    text-align: center;
+    color:#999999;
+    font-size: 1.4rem;
+    /*box-shadow: 0 0 10px #ececed;*/
+}
+@media screen and (max-width: 320px){
+    .app_main{
+        bottom: 60px;
+    }
+    .app_foot{
+        height: 60px;
+    }
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合分析</title>
+    <meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+    <meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/comprehensiveAnalysis.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-uxd.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/comprehensiveAnalysis.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".close-icon").click(function () {
+                $(".bubble-cover").hide(1000);
+                $(".histogram-cover").hide(1000);
+            });
+            $(".c-r-s-icon-1").click(function () {
+                $(".bubble-cover").hide();
+                $(".histogram-cover").hide();
+            });
+            $(".c-r-s-icon-2").click(function () {
+                $(".bubble-cover").hide();
+                $(".histogram-cover").toggle();
+            });
+            $(".c-r-s-icon-3").click(function () {
+                $(".histogram-cover").hide();
+                $(".bubble-cover").toggle();
+             });
+
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <!--        头部导航        -->
+    <div class="header cl">
+        <div class="hear-system-name">
+            <a>江苏省低碳云平台·碳考核系统</a>
+            <span>IANGSULOWCARBONCLOUDPLATFORMCARBONASSESSMENTSYSTEM</span>
+        </div>
+        <nav class="header-nav">
+            <a href="#" class="nav-a-L4 border-left-none">综合分析</a>
+            <a href="#" class="nav-a-L4">省级自评</a>
+            <a href="#" class="nav-a-L4">市级考核</a>
+            <a href="#" class="nav-a-L4">体系管理</a>
+            <a href="#" class="nav-a-R4"><i class="setup"></i>设置</a>
+            <a href="#" class="nav-a-R4"><i class="news"><label class="news-num">9</label></i>消息</a>
+            <a href="#" class="nav-a-R4"><i class="user"></i>王建国</a>
+            <a href="#" class="nav-a-R4"><i class="cancel"></i>退出</a>
+        </nav>
+    </div>
+    <!--        中间内容        -->
+    <div class="main">
+        <div class="main-top cl">
+            <label>体系名称：</label>
+            <select class="task-select">
+                <option value="1">“十三五”温室气体排放目标考核体系</option>
+                <option value="2">“十三五”温室气体排放目标考核体系</option>
+            </select>
+            <label>考核年份：</label>
+            <select class="time-select">
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+            </select>
+
+            <label class="task-state">当前区域:<span>江苏</span></label>
+        </div>
+        <div class="content">
+
+            <!--        左边图表        -->
+            <div class="content-left">
+                <div class="c-l-header">
+                    <div class="c-l-header-1">
+                        <span>考核评分</span>
+                        <div class="grade">
+                            <i><img src="images/analysis/score.png"></i>
+                            <div>
+                                <label>92</label>
+                                分
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-l-header-2">
+                        <span>考核结果</span>
+                        <div class="result">
+                            <i><img src="images/analysis/score.png"></i>
+                            <label>优秀</label>
+                        </div>
+                    </div>
+                    <div class="c-l-header-3">
+                        <span>指标完成率</span>
+                        <div class="finishRate">
+                            <i><img src="images/analysis/score.png"></i>
+                            <div>
+                                <label>97</label>
+                                %
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-l-body">
+                    <div class="c-l-body-1">
+                        <label class="c-l-body-title">单位GDP二氧化碳排放下降指标完成情况</label>
+                        <div id="carbonEmission1" class="chart-1">
+
+                        </div>
+                    </div>
+
+                    <div class="c-l-body-2">
+                        <img src="images/analysis/a-icon-2.png" class="data-icon"/>
+                        <label class="data-name">碳排放总量</label>
+                        <label class="data-num">92</label>
+                        <label class="data-unit">万吨CO2</label>
+                        <label class="data-summarize"><i class="d-s-i-1"></i>年度增幅<span>4.5</span>%</label>
+                    </div>
+                </div>
+
+
+                <div class="c-l-body">
+                    <div class="c-l-body-1">
+                        <label class="c-l-body-title">单位GDP二氧化碳排放下降累计进度完成情况</label>
+                        <div id="carbonEmission2" class="chart-1">
+
+                        </div>
+                    </div>
+                    <div class="c-l-body-2">
+                        <img src="images/analysis/a-icon-1.png"/>
+                        <label class="data-name">碳排放总量</label>
+                        <label class="data-num">92</label>
+                        <label class="data-unit">万吨CO2/亿元</label>
+                        <label class="data-summarize"><i class="d-s-i-2"></i>年度降低<span>5.68</span>%</label>
+                    </div>
+                </div>
+            </div>
+            <!--        右边图表        -->
+            <div class="content-right">
+                <select class="assess-score-select">
+                    <option>考核得分</option>
+                    <option value="1">99</option>
+                </select>
+                <label class="c-r-icon-1"></label>
+            </div>
+            <!--        侧边栏按钮       -->
+            <div class="content-right-slider">
+                <label class="c-r-s-icon-1"><img src="images/analysis/a-icon-5.png"/></label>
+                <label class="c-r-s-icon-2"><img src="images/analysis/a-icon-6.png"/></label>
+                <label class="c-r-s-icon-3"><img src="images/analysis/a-icon-7.png"/></label>
+                <div class="c-r-icon-2"></div>
+            </div>
+        </div>
+        <div class="histogram-cover">
+            <!--        柱形图     -->
+            <div class="histogram-wrap cl">
+                <div class="histogram-wrap-left fl">
+                    <div class="histogram-wrap-header">
+                        <label>体系名称：</label>
+                        <select class="index-select">
+                            <option value="1">单位GDP碳排放目标完成情况</option>
+                            <option value="2">单位GDP碳排放目标完成情况</option>
+                        </select>
+                    </div>
+                    <div id="histogram" class="histogram">
+                        <img src="images/analysis/column.png">
+                    </div>
+                </div>
+                <div class="histogram-wrap-right fr">
+                    <label>图例</label>
+                    <img src="images/analysis/column-oo.png"/>
+                    <div class="remark">
+                        <div>
+                            <label class="average"><i></i>平均分</label>
+                            <label class="examine"><i></i>考核评分</label>
+                        </div>
+                    </div>
+                    <div class="close">
+                        <label class="close-icon"></label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="icon-wrap">
+                <label class="c-r-s-icon-1"><img src="images/analysis/a-icon-5.png"/></label>
+                <label class="c-r-s-icon-2"><img src="images/analysis/a-icon-6.png"/></label>
+                <label class="c-r-s-icon-3"><img src="images/analysis/a-icon-7.png"/></label>
+            </div>
+
+        </div>
+        <div class="bubble-cover">
+            <!--        气泡图     -->
+            <div class="bubble-wrap cl">
+                <div class="bubble-wrap-left fl">
+                    <label class="bubble-wrap-title">江苏省碳排放目标考核气泡图</label>
+                    <div class="bubble">
+                        <img src="images/analysis/bubble.png">
+                    </div>
+                </div>
+                <div class="bubble-wrap-right fr">
+                    <label>指标配置</label>
+                    <div class="indicator-x">
+                        <label>X轴指标&rarr;</label>
+                        <select>
+                            <option>考核评分</option>
+                            <option value="90">90</option>
+                            <option value="80">80</option>
+                        </select>
+                    </div>
+                    <div class="indicator-y">
+                        <label>Y轴指标&uarr;</label>
+                        <select>
+                            <option>考核评分</option>
+                            <option value="90">90</option>
+                            <option value="80">80</option>
+                        </select>
+                    </div>
+                    <div class="indicator-o">
+                        <label>半径指标O</label>
+                        <select>
+                            <option>单位GDP碳排放</option>
+                            <option value="90">90</option>
+                            <option value="80">80</option>
+                        </select>
+                    </div>
+                    <div class="bubble-city-name">
+                        <label>图例</label>
+                        <img src="images/analysis/bubble-oo.png"/>
+                    </div>
+                    <div class="close">
+                        <label class="close-icon"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="icon-wrap">
+                <label class="c-r-s-icon-1"><img src="images/analysis/a-icon-5.png"/></label>
+                <label class="c-r-s-icon-2"><img src="images/analysis/a-icon-6.png"/></label>
+                <label class="c-r-s-icon-3"><img src="images/analysis/a-icon-7.png"/></label>
+
+            </div>
+        </div>
+    </div>
+
+    <!--        底部      -->
+    <div class="bottom-progress">
+    </div>
+</div>
+</body>
+</html>

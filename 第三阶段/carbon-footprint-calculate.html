@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>碳足迹计算器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/carbon-footprint-calculate.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.main').perfectScrollbar();
+        })
+    </script>
+</head>
+<body ng-app="footprintCalculateApp">
+<div class="contain">
+    <div class="app_top">
+        <div class="back"><i class="backIco"></i>返回</div>
+        <div class="title">碳足迹计算器</div>
+        <div class="rigBtn"></div>
+    </div>
+
+
+    <div class="app_main" ng-controller="footprintCalculateContr">
+        <div class="main">
+            <div class="content top">
+                <label class="ques_title">生活习惯（单选）</label>
+                <ul class="list">
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天看电视时长：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="television" value="2">
+                                    <span class="radio_btn"></span>
+                                    ≥1h
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="television" value="1">
+                                    <span class="radio_btn"></span>
+                                    ＜1h
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天空调使用时长：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="air_conditioner" value="3">
+                                    <span class="radio_btn"></span>
+                                    ≥3h
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="air_conditioner" value="2">
+                                    <span class="radio_btn"></span>
+                                    ＜3h
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天手机使用时长：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="telephone" value="4">
+                                    <span class="radio_btn"></span>
+                                    ≥3h
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="telephone" value="2">
+                                    <span class="radio_btn"></span>
+                                    ＜3h
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天笔记本电脑使用时长：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="laptop" value="3">
+                                    <span class="radio_btn"></span>
+                                    ≥3h
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="laptop" value="2">
+                                    <span class="radio_btn"></span>
+                                    ＜3h
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content center">
+                <label class="ques_title">餐饮习惯（单选）</label>
+                <ul class="list">
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天下厨做饭了没：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="cook" value="1">
+                                    <span class="radio_btn"></span>
+                                    Yes
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="cook" value="0">
+                                    <span class="radio_btn"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天吃了几分便当：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="eat" value="3">
+                                    <span class="radio_btn"></span>
+                                    ≥2
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="eat" value="2">
+                                    <span class="radio_btn"></span>
+                                    ＜2
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label class="ques_name">您今天喝了几杯水：</label>
+                            <div class="select_wrap">
+                                <label class="radio_wrap">
+                                    <input type="radio" name="drink" value="3">
+                                    <span class="radio_btn"></span>
+                                    ≥2
+                                </label>
+                                <label class="radio_wrap">
+                                    <input type="radio" name="drink" value="1">
+                                    <span class="radio_btn"></span>
+                                    ＜2
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content bottom">
+                <label class="ques_title">交通方式（多选）</label>
+                <ul class="list">
+                    <li>
+                        <div class="item">
+                            <div class="select_wrap">
+                                <label class="checkbox_wrap">
+                                    <input type="checkbox" name="traffic" ng-click="edit($event)">
+                                    <span class="checkbox_btn"></span>
+                                    公共交通
+                                </label>
+                                <label class="time-wrap">
+                                    <input type="text" class="time_length" disabled>
+                                    小时
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="select_wrap">
+                                <label class="checkbox_wrap">
+                                    <input type="checkbox" name="car" ng-click="edit($event)">
+                                    <span class="checkbox_btn"></span>
+                                    汽车
+                                </label>
+                                <label class="time-wrap">
+                                    <input type="text" class="time_length" disabled>
+                                    小时
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="select_wrap">
+                                <label class="checkbox_wrap">
+                                    <input type="checkbox" name="motor" ng-click="edit($event)">
+                                    <span class="checkbox_btn"></span>
+                                    机车
+                                </label>
+                                <label class="time-wrap">
+                                    <input type="text" class="time_length" disabled>
+                                    小时
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="select_wrap">
+                                <label class="checkbox_wrap">
+                                    <input type="checkbox" name="electrombile" ng-click="edit($event)">
+                                    <span class="checkbox_btn"></span>
+                                    电动车
+                                </label>
+                                <label class="time-wrap">
+                                    <input type="text" class="time_length" disabled>
+                                    小时
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="submit-wrap">
+                <a class="btn btn-submit" ng-click="isSelected()">提交</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="app_foot">
+        <ul>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-message.html" class="footerTxt">碳资讯</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-trading.html" class="footerTxt">碳交易</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-knowledge.html" class="footerTxt">碳知识</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-footprint.html" class="footerTxt">碳足迹</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="mine.html" class="footerTxt">我的</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var app = angular.module('footprintCalculateApp', []);
+    app.controller('footprintCalculateContr', ['$scope', '$window', function ($scope, $window) {
+        var radioCount = 0;
+        var checkCount = 0;
+        var result = 0;
+        $scope.edit = function (event) {
+            var obj = $(event.target);
+            if (obj.is(':checked')) {
+                obj.parent().siblings('.time-wrap').children('.time_length').attr("disabled", false);
+            } else {
+                obj.parent().siblings('.time-wrap').children('.time_length').val('')
+                                    .attr("disabled", true);
+            }
+//            console.log(event);
+        };
+        $scope.isSelected = function () {
+            var inputRadioBtn = angular.element(document.querySelectorAll("input[type='radio']:checked"));
+//            console.log(typeof  inputRadioBtn);
+//            console.dir(inputRadioBtn);
+            $.each(inputRadioBtn, function () {
+//                console.log(this);
+//                console.log(typeof  parseInt(this.value));
+                radioCount += parseInt(this.value, 10);
+            });
+//            console.log(radioCount);
+
+
+            var inputCheckBoxBtn = angular.element(document.querySelectorAll("input[type='checkbox']:checked"));
+            $.each(inputCheckBoxBtn, function () {
+                checkCount += parseInt($(this).parent().siblings('.time-wrap').children('.time_length').val(), 10);
+            });
+//            console.log(checkCount);
+            result = ((radioCount + checkCount) / 3).toFixed(2);
+//            console.log(result);
+            $window.location.href = 'carbon-footprint-result.html?result=' + result;
+        };
+    }])
+</script>
+</body>
+</html>

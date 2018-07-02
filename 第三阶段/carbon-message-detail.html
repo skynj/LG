@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>碳资讯-新闻详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/carbon-message-detail.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.content_center').perfectScrollbar();
+        })
+    </script>
+</head>
+<body>
+<div class="contain" ng-app="messageDetailApp">
+    <div class="app_top">
+        <a href="javascript: history.go(-1);" class="back"><i class="backIco"></i>返回</a>
+        <!--<div class="title">碳资讯</div>-->
+        <div class="rigBtn"></div>
+    </div>
+    <div class="app_main" ng-controller="messageDetailContr">
+        <div class="main_top" data-pid={{message.pid}}>
+            <label class="message_title" data-id={{mesage.id}}>{{message.title}} </label>
+            <div class="content_bottom">
+                <label class="message_time">{{message.date}}</label>
+                <a href="javascript:;" class="linkTo">{{message.resource}}</a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div  class="content_top" ng-if="message.pic != null">
+                <img class="content_img" src="http://192.168.0.38:6001/static/images/{{message.pic}}">
+            </div>
+            <div class="content_center">
+                <p class="message-article">
+                    {{message.articleTxt}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="app_foot">
+        <ul>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-message.html" class="footerTxt">碳资讯</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-trading.html" class="footerTxt">碳交易</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-knowledge.html" class="footerTxt">碳知识</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-footprint.html" class="footerTxt">碳足迹</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="mine.html" class="footerTxt">我的</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var app = angular.module('messageDetailApp', []);
+    app.config(['$locationProvider', function ($locationProvider) {
+        // $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }]);
+    app.controller('messageDetailContr', ['$scope', '$http','$location', function ($scope,$http, $location) {
+        var noticeID = '';
+        if ($location.search().id) {
+            noticeID = $location.search().id;
+            console.log(noticeID);
+        }
+        $http.post('http://192.168.0.38:6001/articleKnow', $.param({pid: 1}), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).then(function successCallback(response) {
+            console.dir(response.data[0]);
+            $scope.message = response.data[0];
+        }, function errorCallback(response) {
+            alert("没收到传值！！！")
+        });
+    }])
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "ReduceMissions": [
+    {
+      "name": "项目数量",
+      "num": "58",
+      "unit": "个"
+    },
+    {
+      "name": "项目投资总额",
+      "num": "2.3",
+      "unit": "亿元"
+    },
+    {
+      "name": "项目进度",
+      "num": "64",
+      "unit": "%"
+    }
+  ],
+  "FreightTypes": [
+    {
+      "name": "公路货运",
+      "icon": "screen-item-num-icon-1.png",
+      "num": "0.5",
+      "unit": "吨标煤/公里"
+    },
+    {
+      "name": "公路客运",
+      "icon": "screen-item-num-icon-2.png",
+      "num": "0.41",
+      "unit": "吨标煤/公里"
+    },
+    {
+      "name": "城市公交",
+      "icon": "screen-item-num-icon-3.png",
+      "num": "0.82",
+      "unit": "吨标煤/公里"
+    },
+    {
+      "name": "港口生产",
+      "icon": "screen-item-num-icon-4.png",
+      "num": "0.32",
+      "unit": "吨标煤/公里"
+    }
+  ],
+  "GeneralInfo": {
+    "updateTime": "2017.6.24 11:04:22",
+    "Info": [
+      {
+        "name": "检查车辆",
+        "num": "2000",
+        "unit": "辆"
+      },
+      {
+        "name": "在途汽车",
+        "num": "1200",
+        "unit": "辆"
+      },
+      {
+        "name": "静默汽车",
+        "num": "800",
+        "unit": "辆"
+      },{
+        "name": "累计点火",
+        "num": "1800",
+        "unit": "辆"
+      },{
+        "name": "碳排总量",
+        "num": "2552",
+        "unit": "吨CO2e"
+      },{
+        "name": "能耗总量",
+        "num": "1452",
+        "unit": "吨标煤"
+      }
+    ]
+  }
+}

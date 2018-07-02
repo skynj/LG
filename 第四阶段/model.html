@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+</head>
+<body>
+<!--    容器      -->
+<div class="contain" ng-app="myApp">
+    <!--        头部      -->
+    <div class="top">
+        <top-directive></top-directive>
+    </div>
+
+    <!--        主体      -->
+    <div class="main">
+        <div class="main-wrap">
+            <div class="main-top wrap"></div>
+            <div class="main-bottom"></div>
+        </div>
+
+    </div>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+</script>
+<script type="text/javascript" src="js/top-directive.js"></script>
+</body>
+</html>

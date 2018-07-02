@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大屏</title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/screen.css">
+
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+
+    <script type="text/javascript" src="js/jquery-uxd.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/bigScreen.js"></script>
+
+
+
+</head>
+<body>
+<div class="contain" ng-app="myApp">
+    <div class="top">
+        <div class="top-select">
+            <label class="year-select-title color-style-1">年份选择：</label>
+            <div class="year-select-wrap">
+
+                <select class="year-select color-style-1">
+                    <option>请选择</option>
+                    <option value="0" selected class="">2016年</option>
+                    <option value="1" class="">2017年</option>
+                    <option value="2" class="">2018年</option>
+                </select>
+                <i class="screen-down"></i>
+            </div>
+        </div>
+    </div>
+    <div class="main" ng-controller="screen-controller">
+        <!--        左侧      -->
+        <div class="left-wrap">
+            <div class="charts-wrap energy-carbon-movements">
+                <div class="charts-header">
+                    <label class="title-style">能耗与碳排放走势</label>
+                </div>
+                <div class="charts-content">
+                    <div class="charts-area" id="charts-1"></div>
+                </div>
+            </div>
+            <div class="charts-wrap energy-analyze">
+                <div class="charts-header">
+                    <label class="title-style">企业能耗分析</label>
+                </div>
+                <div class="charts-content">
+                    <div class="charts-area energy-analyze-charts-pie cl">
+                        <div class="charts-2-date fl">
+
+                        </div>
+                        <div class="charts-2 fr">
+
+                        </div>
+                    </div>
+                    <div class="charts-area energy-analyze-charts-bar " id="charts-2-1"></div>
+                </div>
+            </div>
+        </div>
+        <!--        中间      -->
+        <div class="center-wrap">
+            <div class="charts-wrap map charts-3">
+                <div class="vehicle-info-wrap">
+                    <div class="info-header cl">
+                        <label class="car-num fl">鲁B 8Z0C3</label>
+                        <label class="time color-style-2 fr">2017年06月01日 12:04:25</label>
+                    </div>
+                    <div class="info-detail">
+                        <div class="info-line cl">
+                            <div class="info-left fl">
+                                <label class="label label-width70 color-style-2 textAlign-right company-name">企业名称：</label>
+                                <label class="label color-style-3">中交集团</label>
+                            </div>
+                            <div class="info-right fr">
+                                <label class="label label-width150 color-style-2 textAlign-right company-name ">实时油耗：</label>
+                                <label class="label color-style-3">2g/s</label>
+                            </div>
+                        </div>
+                        <div class="info-line cl">
+                            <div class="info-left fl">
+                                <label class="label label-width70 color-style-2 textAlign-right industry">所属行业：</label>
+                                <label class="label color-style-3">公路货运</label>
+                            </div>
+                            <div class="info-right fr">
+                                <label class="label label-width150 color-style-2 textAlign-right">G-BOS数据监测状态：</label>
+                                <label class="label color-style-3">正常</label>
+                            </div>
+                        </div>
+                        <div class="info-line cl">
+                            <div class="info-left fl">
+                                <label class="label label-width70 color-style-2 textAlign-right">实时速度：</label>
+                                <label class="label color-style-3">30Km/h</label>
+                            </div>
+                            <div class="info-right fr">
+                                <label class="label label-width150 color-style-2 textAlign-right company-name ">本次行程累计时长：</label>
+                                <label class="label color-style-3">20min</label>
+                            </div>
+                        </div>
+                        <div class="info-line cl">
+                            <div class="info-left fl">
+                                <label class="label label-width70 color-style-2 textAlign-right">位 置：</label>
+                                <label class="label color-style-3">北纬 36°</label>
+                                <label class="label color-style-3">东经 120°</label>
+                            </div>
+                            <div class="info-right fr">
+                                <label class="label label-width150 color-style-2 textAlign-right company-name ">实时油耗：</label>
+                                <label class="label color-style-3">2g/s</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consumption-charts charts-4"></div>
+                </div>
+            </div>
+            <div class="charts-wrap real-time-traffic-wrap">
+                <div class="real-time-traffic-info">
+                    <div class="traffic-info-top">
+                        <ul class="list">
+                            <li class="item-wrap cl" ng-repeat="freightType in freightTypes" on-finish>
+                                <div class="item fl">
+                                    <label class="item-label item-title">{{freightType.name}}</label>
+                                    <div class="item-label item-num-img" ng-class="'svgView'+ ($index +1)"></div>
+                                    <span ng-class="fontColor($index + 1)">{{freightType.num}}</span>
+                                    <label class="item-label item-unit ">吨标煤/公里</label>
+                                </div>
+                                <div class="border-3 fr"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="traffic-info-bottom">
+                        <ul class="general-info-list">
+                            <li class="general-wrap">
+                                <div class="general-info">
+                                    <label class="general-label general-info-title">更新时间</label>
+                                    <label class="general-label general-info-date">{{generalInfo.updateTime.substring(0,10)}}</label>
+                                    <label class="general-label general-info-time">{{generalInfo.updateTime.substring(10,18)}}</label>
+                                </div>
+                            </li>
+                            <li class="general-wrap" ng-repeat="info in generalInfo.Info">
+                                <div class="general-info">
+                                    <label class="general-label general-info-title">{{info.name}}</label>
+                                    <label class="general-info-num">{{info.num}} <span
+                                            class="general-info-unit">{{info.unit}}</span></label>
+                                </div>
+                            </li>
+                            <!-- <li class="general-wrap">
+                                 <div class="general-info">
+                                     <label class="general-label general-info-title">检查车辆</label>
+                                     <label class="general-info-num">2000 <span
+                                             class="general-info-unit">辆</span></label>
+                                 </div>
+                             </li>
+                             <li class="general-wrap">
+                                 <div class="general-info">
+                                     <label class="general-label general-info-title">检查车辆</label>
+                                     <label class="general-info-num">2000 <span
+                                             class="general-info-unit">辆</span></label>
+                                 </div>
+                             </li>
+                             <li class="general-wrap">
+                                 <div class="general-info">
+                                     <label class="general-label general-info-title">检查车辆</label>
+                                     <label class="general-info-num">2000 <span
+                                             class="general-info-unit">辆</span></label>
+                                 </div>
+                             </li>
+                             <li class="general-wrap">
+                                 <div class="general-info">
+                                     <label class="general-label general-info-title">碳排总量</label>
+                                     <label class="general-info-num">2552 <span
+                                             class="general-info-unit">吨CO2e</span></label>
+                                 </div>
+                             </li>
+                             <li class="general-wrap">
+                                 <div class="general-info">
+                                     <label class="general-label general-info-title">能耗总量</label>
+                                     <label class="general-info-num">1452 <span
+                                             class="general-info-unit">吨标煤</span></label>
+                                 </div>
+                             </li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="legends-wrap">
+                    <ul class="legends cl">
+                        <li class="legend legends-icon-1 fl">
+                            公路货运
+                        </li>
+                        <li class="legend legends-icon-2 fl">
+                            公路客运
+                        </li>
+                        <li class="legend legends-icon-3 fl">
+                            城市公交
+                        </li>
+                        <li class="legend legends-icon-4 fl">
+                            港口生产
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--        右侧      -->
+        <div class="right-wrap">
+            <div class="charts-wrap energy-saving-reduce-emissions">
+                <div class="charts-header">
+                    <label class="title-style">交通运输节能减排项目</label>
+                </div>
+                <div class="charts-content">
+                    <div class="project-info">
+                        <ul class="list e-s-r-e-list">
+                            <li class="item-wrap cl" ng-repeat="reduceMission in  reduceMissions">
+                                <div class="item fl">
+                                    <label class="item-label item-title">{{reduceMission.name}}</label>
+                                    <label class="project-num">{{reduceMission.num}}<span class="project-unit">{{reduceMission.unit}}</span></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="charts-area charts-5"></div>
+                </div>
+            </div>
+            <div class="charts-wrap traffic-analyze">
+                <div class="charts-header">
+                    <label class="title-style">交通运输行业分析</label>
+                </div>
+                <div class="charts-content">
+
+                    <div class="charts-area charts-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/demo5副本.js"></script>
+<script type="text/javascript" src="js/screen.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>碳项目</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/carbon-project.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.js"></script>
+    <script>
+        $(function () {
+            $('.main').perfectScrollbar();
+        })
+    </script>
+</head>
+<body ng-app="projectApp" ng-controller="projectContr">
+<div class="contain">
+    <div class="app_top">
+        <!--<div class="back"><i class="backIco"></i>返回</div>-->
+        <div class="title">碳项目</div>
+        <!--<div class="rigBtn"></div>-->
+    </div>
+
+
+    <div class="app_main">
+        <div class="main">
+            <div class="content top">
+                <label class="content_title">项目总览</label>
+                <div class="rigBtn"></div>
+                <div class="content-wrap">
+                    <div class="top-left">
+                        <label class="data-name">项目总数</label>
+                        <label class="data-num">{{list.length}}<span class="data-unit">个</span></label>
+                    </div>
+                    <i class="top-border"></i>
+                    <div class="top-right">
+                        <label class="data-name">项目能源消耗总量</label>
+                        <label class="data-num">7268<span class="data-unit">吨标准煤</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="content center">
+                <label class="content_title">项目名称</label>
+                <ul class="list">
+                    <li ng-repeat="item in list">
+                        <div class="item">
+                            <div class="item_content">
+                                <p class="message_title" data-id={{item.id}}>{{item.title}}</p>
+                                <a href="carbon-project-detail.html?id={{item.id}}" class="content_bottom">
+                                    <label class="project-type">{{item.status}}</label>
+                                    <i class="linkTo"></i>
+                                </a>
+                                <p class="time-line">开始时间：<label class="message_time">{{item.startTime}}</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li>
+                        <div class="item">
+                            <div class="item_content">
+                                <p class="message_title">苏州精粹日用品事业有限公司恢复项目</p>
+                                <a href="javascript:;" class="content_bottom">
+                                    <label class="project-type">新建项目</label>
+                                    <i class="linkTo"></i>
+                                </a>
+                                <p class="time-line">开始时间：<label class="message_time">2018-4-20</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="item_content">
+                                <p class="message_title">苏州精粹日用品事业有限公司恢复项目</p>
+                                <a href="javascript:;" class="content_bottom">
+                                    <label class="project-type">新建项目</label>
+                                    <i class="linkTo"></i>
+                                </a>
+                                <p class="time-line">开始时间：<label class="message_time">2018-4-20</label></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="item_content">
+                                <p class="message_title">苏州精粹日用品事业有限公司恢复项目</p>
+                                <a href="javascript:;" class="content_bottom">
+                                    <label class="project-type">新建项目</label>
+                                    <i class="linkTo"></i>
+                                </a>
+                                <p class="time-line">开始时间：<label class="message_time">2018-4-20</label></p>
+                            </div>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="app_foot">
+        <ul>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-message.html" class="footerTxt">碳资讯</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-trading.html" class="footerTxt">碳交易</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-knowledge.html" class="footerTxt">碳知识</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="carbon-footprint.html" class="footerTxt">碳足迹</a>
+                </div>
+                <div class="rightLine"></div>
+            </li>
+            <li>
+                <div class="footerMet">
+                    <i class="footerIco"></i>
+                    <a href="mine.html" class="footerTxt">我的</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var app = angular.module('projectApp',[]);
+    app.controller('projectContr',['$scope','$http',function ($scope,$http) {
+        $http.get('http://192.168.0.38:6001/mineList').then(function successCallback(response) {
+            $scope.list = response.data;
+//            console.dir(response);
+        },function errorCallback(response) {
+            alert("没收到传值！！！")
+        })
+    }])
+</script>
+</body>
+</html>

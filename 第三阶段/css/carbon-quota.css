@@ -1,0 +1,126 @@
+@charset "utf-8";
+/**
+* @time 2018/06/08 10:51:21
+* @author lg
+* @desc  碳配额页面css
+*/
+.color-blue{
+    color:#4993f7;
+}
+.color-green{
+    color:#64d573;
+}
+.app_main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.content {
+    background: #ffffff;
+}
+
+.content-top {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #dadbdc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.date-year {
+    color: #888888;
+    font-size: 1.6rem;
+}
+
+.icon-calendar {
+    width: 25px;
+    height: 25px;
+    background: url("../images/myBusiness/icon-calendar.png") no-repeat center / cover;
+    cursor: pointer;
+}
+
+.content-center {
+    margin: 20px 0 10px 0;
+    height: 170px;
+    flex: 0.7;
+    border-top: 1px solid #dadbdc;
+    border-bottom: 1px solid #dadbdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-info-wrap {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-logo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: url("../images/myBusiness/icon-unconfirmed.png") no-repeat center / contain;
+}
+.info-isConfirm{
+    color:#000000;
+    font-size: 1.6rem;
+    margin-top:25px;
+}
+.info-msg{
+    color:#999999;
+    font-size: 1.3rem;
+}
+.content-bottom {
+    flex: 1.5;
+    height: 322px;
+    border-top: 1px solid #dadbdc;
+}
+.list{
+    width: 100%;
+}
+.item{
+    height:77px ;
+    line-height: 77px;
+    border-bottom: 1px solid #dadbdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    display: inline-block;
+    vertical-align: middle;
+    width:18px;
+    height:18px;
+    position: relative;
+    top:2px;
+    /*background: yellowgreen;*/
+}
+.icon-distribute-1{
+    background: url("../images/myBusiness/icon-distribute-1.png") no-repeat center / cover;
+}
+.icon-distribute-2{
+    background: url("../images/myBusiness/icon-distribute-2.png") no-repeat center / cover;
+}
+.distribute-info{
+    color:#333333;
+    font-size: 1.6rem;
+    margin:0 5px 0 10px;
+}
+
+.distribute-num{
+    font-size: 2.4rem;
+    margin:0 5px;
+}
+.distribute-unit{
+    color:#999999;
+    font-size: 1.3rem;
+}

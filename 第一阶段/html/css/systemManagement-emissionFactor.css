@@ -1,0 +1,275 @@
+/**
+* @time 2018/04/12 15:32:44
+* @author lg
+* @desc 排放因子页面样式
+*/
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top {
+    width: 100%;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.main {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/*      内容侧边栏       */
+.main .sidebar {
+    width: 115px;
+    background: #414956;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+}
+
+.main .sidebar ul {
+    width: 115px;
+}
+.main .sidebar ul li{
+    width:115px;
+    height: auto;
+}
+.main .sidebar ul li a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 67px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding:10px 23px;
+    white-space: pre-line;
+    word-wrap: break-word;
+    border-top: 1px solid #565d69;
+    border-right: 1px solid #414956;
+    border-bottom: 1px solid #1b2736;
+    border-left: 1px solid #414956;
+}
+
+.main .sidebar ul li a:hover {
+    border: 1px solid #5b9fff;
+    background: -webkit-linear-gradient(#398bff, #0b5fd4); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#398bff, #0b5fd4); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#398bff, #0b5fd4); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#398bff, #0b5fd4); /* 标准的语法 */
+}
+
+/*      内容右侧        */
+.main .content {
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 115px;
+}
+
+.main .content .choose-time {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #ebeef1;
+    border-top: 1px solid #b0b9bf;
+    border-bottom: 1px solid #b0b9bf;
+}
+
+.main .content .choose-time label {
+    font-size: 14px;
+    color: #313131;
+    margin-left: 20px;
+}
+
+.main .content .choose-time select {
+    width: 100px;
+    height: 27px;
+    line-height: 27px;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    -webkit-box-shadow: 0 1px 4px #c7cfd9 inset;
+    -moz-box-shadow: 0 1px 4px #c7cfd9 inset;
+    box-shadow: 0 1px 4px #c7cfd9 inset;
+
+    border: 1px solid #c7cfd9;
+    padding-left: 5px;
+}
+
+.main .content .content-table {
+    padding: 0 16px;
+}
+
+/*      右侧头部        */
+.main .content .content-table .table-top {
+    min-width: 874px;
+    height: 30px;
+    line-height: 30px;
+    margin: 13px 0;
+}
+
+.main .content .content-table .table-top div i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 5px;
+    height: 15px;
+    line-height: 15px;
+    -webkit-border-radius: 2.5px;
+    -moz-border-radius: 2.5px;
+    border-radius: 2.5px;
+    background: url("../images/icon-1.png") no-repeat center;
+}
+
+.main .content .content-table .table-top label {
+    font-size: 14px;
+    color: #313131;
+    line-height: 20px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.main .content .content-table .table-top img {
+    position: relative;
+    top: 5px;
+}
+
+.main .content .content-table .table-top span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 67px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 5px;
+    border: 1px solid #ccd1d9;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    color: #7f8da0;
+    font-size: 14px;
+    cursor: pointer;
+    background: -webkit-linear-gradient(#ffffff, #eaeef3); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#ffffff, #eaeef3); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#ffffff, #eaeef3); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#ffffff, #eaeef3); /* 标准的语法*/
+}
+
+.main .content .content-table .table-top span:hover {
+    color: #fefeff;
+    font-size: 14px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#ffffff, #eaeef3); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#ffffff, #eaeef3); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#ffffff, #eaeef3); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#378afd, #0e61d7); /* 标准的语法*/
+    border: 1px solid #0a3a8e;
+}
+
+/*      表格内容        */
+.main .content .content-table .table-content table {
+    width: 100%;
+    height: auto;
+}
+
+.main .content .content-table .table-content .table-1 {
+}
+
+.main .content .content-table .table-content .table-1 thead {
+    border-right: 1px solid #c7cfd9;
+}
+
+.main .content .content-table .table-content .table-1 th {
+    border-top: 2px solid #9aa6b7;
+    border-right: 1px solid #c7cfd9;
+    border-bottom: 1px solid #9aa6b7;
+    border-left: 1px solid #c7cfd9;
+    height: 42px;
+    line-height: 42px;
+    color: #313131;
+    font-size: 14px;
+    background: -webkit-linear-gradient(#f6f8fb, #e3e6ec); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#f6f8fb, #e3e6ec); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#f6f8fb, #e3e6ec); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#f6f8fb, #e3e6ec); /* 标准的语法 */
+}
+
+.main .content .content-table .table-content .table-1 td {
+    height: 2px;
+    border-right: 1px solid #c7cfd9;
+    border-left: 1px solid #c7cfd9;
+}
+
+/*.main .content .content-table .table-content .test{
+    width:100%;height:2px;
+    border-right:1px solid #c7cfd9;
+    border-left:1px solid #c7cfd9;
+}*/
+.table-2-wrap{
+    width:100%;
+    height:600px;
+    overflow-y: auto;
+}
+.main .content .content-table .table-content .table-2 tbody {
+    border-top: 1px solid #9aa6b7;
+    border-bottom: 1px solid #9aa6b7;
+}
+
+.main .content .content-table .table-content .table-2 td {
+    border-right: 1px solid #c7cfd9;
+    border-left: 1px solid #c7cfd9;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #566273;
+}
+
+.w30 {
+    width:30%;
+}
+
+.padding-left-60 {
+    padding-left: 60px;
+}
+
+.main .content .content-table .table-content .table-2 .input-num {
+    -web-kit-appearance: none; /*去除默认样式*/
+    -moz-appearance: none; /*去除默认样式*/
+
+    -webkit-box-shadow: 0 1px 4px #c7cfd9 inset;
+    -moz-box-shadow: 0 1px 4px #c7cfd9 inset;
+    box-shadow: 0 1px 4px #c7cfd9 inset;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    border: 1px solid #c7cfd9;
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.main .content .content-table .table-content .table-2 tr:nth-child(even) {
+    background: #f5f7fa;
+}

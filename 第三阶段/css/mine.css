@@ -1,0 +1,98 @@
+@charset "utf-8";
+/**
+* @time 2018/06/06 14:48:38
+* @author lg
+* @desc ’我的‘页面css
+*/
+.app_main {
+    background: #f3f4f5;
+}
+
+.top-nav {
+    width: 100%;
+    height: 40%;
+    background: url("../images/mine/mine-nav-bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.content {
+    padding: 20px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-title {
+    color: #333333;
+    font-size: 2rem;
+}
+
+.form-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.username-wrap, .password-wrap, .login-btn {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    margin:10px 0;
+}
+
+.username, .password {
+    width: calc(100% - 50px);
+    height: 50px;
+    line-height: 50px;
+    background: #ffffff;
+    border-radius: 2px;
+    border: none;
+    box-shadow: 0 0 4px 1px #ecdcdc;
+    list-style: none;
+    padding-left: 50px;
+}
+
+.icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+.icon-username {
+    background: url("../images/mine/icon-username.png") no-repeat center / contain;
+}
+
+.icon-password {
+    background: url("../images/mine/icon-password.png") no-repeat center / contain;
+}
+
+.login-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #6d99ff, #3c6cde);
+    text-align: center;
+    color:#ffffff;
+    font-size: 1.6rem;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 1px #aea2ec;
+}
+.bottom-explain{
+    color:#999999;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 23px;
+}

@@ -1,0 +1,87 @@
+{
+  "ProjectInfo": {
+    "projectName": "官塘新城绿色交通综合示范区建设项目",
+    "constructerName": "官塘新城绿色交通综合示范区建设项目",
+    "investor": "XX市XXXXX公司",
+    "projectProgress": "90%",
+    "projectType": {
+      "num": "39.1",
+      "unit": "亿元"
+    },
+    "energySaving": {
+      "num": "3000",
+      "unit": "万元"
+    },
+    "startTime": "2013年",
+    "completedTime": "2017年",
+    "emission": "1.3万吨/年",
+    "orNot": true,
+    "chargePerson": "胡志明",
+    "telephone": "18036529652",
+    "email": "zhiming1989@163.com"
+  },
+  "TotalIndicator": [
+    {
+      "name": "项目总数",
+      "num": "48",
+      "unit": "个"
+    },
+    {
+      "name": "总投资",
+      "num": "325.98",
+      "unit": "亿元"
+    },
+    {
+      "name": "节能减排投资",
+      "num": "82.7",
+      "unit": "亿元"
+    },
+    {
+      "name": "申报节能减排专项资金",
+      "num": "8042.78",
+      "unit": "万元"
+    },
+    {
+      "name": "预计能源消耗量",
+      "num": "118.98",
+      "unit": "万吨标煤"
+    },
+    {
+      "name": "节能量",
+      "num": "5.8",
+      "unit": "万吨标煤"
+    }
+  ],
+  "ReductionProject": {
+    "reductionProjectInfo": [
+      {
+        "name": "项目数量",
+        "icon": "icon-1.png",
+        "num":"48",
+        "unit":"个"
+      },
+      {
+        "name": "投资金额",
+        "icon": "icon-2.png",
+        "num":"85",
+        "unit":"亿元"
+      },
+      {
+        "name": "节能减排投资",
+        "icon": "icon-3.png",
+        "num":"1.2",
+        "unit":"亿元"
+      },
+      {
+        "name": "申请节能减排资金",
+        "icon": "icon-4.png",
+        "num":"85",
+        "unit":"亿元"
+      }
+    ],
+    "reductionProjectStatistics": [
+      {
+      }
+    ]
+  }
+}

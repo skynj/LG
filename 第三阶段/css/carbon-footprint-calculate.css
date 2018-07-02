@@ -1,0 +1,139 @@
+@charset "utf_8";
+/**
+* @time 2018/06/01 10:41:42
+* @author lg
+* @desc  碳足迹计算器页面css
+*/
+.app_main {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    background: #f3f4f5;
+}
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.content {
+    width: 100%;
+    height: auto;
+}
+.list li{
+    padding-left:10px;
+    background: #ffffff;
+}
+.ques_title{
+    display: inline-block;
+    margin:5px 0;
+    color:#888888;
+    font-size: 1.4rem;
+    padding-left: 10px;
+}
+.item{
+    height:85px;
+    border-bottom:1px solid #dadbdc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.ques_name{
+    display: inline-block;
+    width: 100%;
+    color:#000000;
+    font-size: 1.6rem;
+}
+.select_wrap{
+    width: 100%;
+    color:#888888;
+    font-size: 1.6rem;
+}
+.radio_wrap{
+     width:85px;
+ }
+.radio_wrap,.checkbox_wrap{
+    display: inline-block;
+    height:38px;
+    line-height: 38px;
+    text-align: left;
+    position: relative;
+    padding-left:40px;
+}
+.checkbox_wrap{
+    width:90px;
+}
+.bottom .checkbox_wrap{
+    padding-left:30px;
+    color: #000000;
+}
+input[type="radio"],input[type="checkbox"]{
+    display: none;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translate(0,-25%);
+}
+.radio_btn,.checkbox_btn{
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 100%;
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: -1px;
+    vertical-align: middle;
+    width: 15px;
+    line-height: 1;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translate(0,-50%);
+}
+input[type="radio"]:checked + .radio_btn,input[type="checkbox"]:checked + .checkbox_btn{
+    border:6px solid #4993f7;
+    width:9px;
+    height:9px;
+}
+.time_length{
+    display: inline-block;
+    width:100px;
+    margin-right:10px;
+}
+.time-wrap{
+    display: inline-block;
+    text-align: right;
+    height: 38px;
+    line-height: 38px;
+    color: #000000;
+}
+.bottom .item{
+    height:40px;
+    border-bottom:none ;
+}
+.submit-wrap{
+    /*width:100%;*/
+    /*height:auto;*/
+    /*background: lightyellow;*/
+    padding:40px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn-submit{
+    display: inline-block;
+    width:355px;
+    height:45px;
+    line-height: 45px;
+    background: linear-gradient(to right , #6d99ff, #3c6cde);
+    text-align: center;
+    color:#ffffff;
+    font-size: 1.6rem;
+    border-radius: 3px;
+}
